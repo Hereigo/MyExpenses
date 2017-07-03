@@ -13,7 +13,7 @@
     <a href="/api/default">Api_Default</a>
     <br />
     <br />
-    <a href="api/Expenses">Api_Expenses</a>
+    <a href="/api/Expenses">Api_Expenses</a>
     <br />
     <br />
     <input id="btn" type="button" value="Get All Values!" />

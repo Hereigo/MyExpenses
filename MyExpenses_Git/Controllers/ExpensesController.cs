@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Web;
 using System.Web.Http;
-// using Web_API.Models;
 
-namespace Expenses_WebApi_Sqlite.Controllers________________________________
+namespace MyExpenses_Git.Controllers
 {
     public class ExpensesController : ApiController
     {
