@@ -103,12 +103,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="default.asp" />
+    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="App_Data\aaaSqlite.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
-    <Content Include="Scripts\AAA-Script.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>

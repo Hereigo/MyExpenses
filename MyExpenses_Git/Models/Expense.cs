@@ -8,6 +8,7 @@ namespace Web_API.Models
         public DateTime Created { get; set; }
         public string Category { get; set; }
         public string Description { get; set; }
+        public string Author { get; set; }
     }
 
     public enum Category

@@ -1,10 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web;
 using System.Web.Http;
 using Web_API.Models;
@@ -22,19 +20,20 @@ namespace MyExpenses_Git.Controllers
             using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + dbPath + "; Version=3;"))
             {
                 conn.Open();
-                using (SQLiteCommand fmd = conn.CreateCommand())
+                using (SQLiteCommand cmd = conn.CreateCommand())
                 {
-                    fmd.CommandText = @"SELECT * FROM myExpenses";
-                    fmd.CommandType = CommandType.Text;
-                    SQLiteDataReader r = fmd.ExecuteReader();
-                    while (r.Read())
+                    cmd.CommandText = @"SELECT * FROM myExpenses";
+                    cmd.CommandType = CommandType.Text;
+                    SQLiteDataReader rdr = cmd.ExecuteReader();
+                    while (rdr.Read())
                     {
                         var xpns = new Expense
                         {
-                            id = r.GetInt32(r.GetOrdinal("id")),
-                            Created = r.GetDateTime(r.GetOrdinal("time")),
-                            Category = r.GetString(r.GetOrdinal("category")),
-                            Description = r.GetString(r.GetOrdinal("description"))
+                            id = rdr.GetInt32(rdr.GetOrdinal("id")),
+                            Created = rdr.GetDateTime(rdr.GetOrdinal("time")),
+                            Category = rdr.GetString(rdr.GetOrdinal("category")),
+                            Description = rdr.GetString(rdr.GetOrdinal("description")),
+                            Author = rdr.GetString(rdr.GetOrdinal("author"))
                         };
                         xpenses.Add(xpns);
                     }
@@ -57,8 +56,41 @@ namespace MyExpenses_Git.Controllers
         }
 
         // POST: api/Expenses
-        public void Post([FromBody]string value)
+        public void Post([FromBody]object expenseData)
+        //public async Task<IHttpActionResult> Post([FromBody]object expenseData)
         {
+            Expense result = (Expense)(JsonConvert.DeserializeObject<Expense>(expenseData.ToString()));
+            InsertIntoDb(result);
+
+            //return Redirect(new System.Uri("/api/Expenses"));
+        }
+
+        private void InsertIntoDb(Expense expense)
+        {
+            string dbPath = HttpContext.Current.Server.MapPath(@"~\App_Data\aaaSqlite.db");
+
+            using (SQLiteConnection conn = new SQLiteConnection("Data Source=" + dbPath + "; Version=3;"))
+            {
+                conn.Open();
+                if (conn.State == ConnectionState.Open)
+                {
+                    SQLiteCommand cmd = conn.CreateCommand();
+                    string sql_command =
+                        "INSERT INTO myExpenses (time, category, description, author) VALUES ("
+                      + "'" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.sss")
+                      + "', '" + expense.Category + "', '" + expense.Description + "', '" + expense.Author + "');";
+                    cmd.CommandText = sql_command;
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (SQLiteException ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+            }
+            System.Threading.Thread.Sleep(2000);
         }
 
         // PUT: api/Expenses/5
