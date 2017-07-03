@@ -7,14 +7,15 @@ using System.Net;
 using System.Net.Http;
 using System.Web;
 using System.Web.Http;
+using Web_API.Models;
 
 namespace MyExpenses_Git.Controllers
 {
     public class ExpensesController : ApiController
     {
-        private List<string> GetAllExpenses()
+        private List<Expense> GetAllExpenses()
         {
-            List<string> xpenses = new List<string>();
+            List<Expense> xpenses = new List<Expense>();
 
             string dbPath = HttpContext.Current.Server.MapPath(@"~\App_Data\aaaSqlite.db");
 
@@ -23,12 +24,19 @@ namespace MyExpenses_Git.Controllers
                 conn.Open();
                 using (SQLiteCommand fmd = conn.CreateCommand())
                 {
-                    fmd.CommandText = @"SELECT (category) FROM myExpenses";
+                    fmd.CommandText = @"SELECT * FROM myExpenses";
                     fmd.CommandType = CommandType.Text;
                     SQLiteDataReader r = fmd.ExecuteReader();
                     while (r.Read())
                     {
-                        xpenses.Add(Convert.ToString(r["category"]));
+                        var xpns = new Expense
+                        {
+                            id = r.GetInt32(r.GetOrdinal("id")),
+                            Created = r.GetDateTime(r.GetOrdinal("time")),
+                            Category = r.GetString(r.GetOrdinal("category")),
+                            Description = r.GetString(r.GetOrdinal("description"))
+                        };
+                        xpenses.Add(xpns);
                     }
                 }
             }
@@ -36,7 +44,7 @@ namespace MyExpenses_Git.Controllers
         }
 
         // GET: api/Expenses
-        public IEnumerable<string> Get()
+        public IEnumerable<Expense> Get()
         {
             return GetAllExpenses().ToArray();
             //return new string[] { "value1", "value2" };

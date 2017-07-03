@@ -8,10 +8,14 @@
             url: "/api/Expenses",
             dataType: "json",
             success: function (data) {
-                $.each(data, function (index, val) {
-                    //var currVal = val.id + ' - ' + val.Created + ' - ' + val.Category + ' - ' + val.Description;
+                $.each(data, function (index, Expense) {
+
+                    //TODO:  GET VALUES FROM OBJECT !!!
+
+                    //var currVal = Expense.id + ' - ' + Expense.Created + ' - ' + Expense.Category + ' - ' + Expense.Description;
                     //myValues.append('<li>' + currVal + '</li>');
-                    myValues.append('<li>' + val + '</li>');
+
+                    myValues.append('<li>' + Expense + '</li>');
                 });
             }
         });
