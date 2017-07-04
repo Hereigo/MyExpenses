@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using Web_API.Models;
@@ -29,11 +30,12 @@ namespace MyExpenses_Git.Controllers
                     {
                         var xpns = new Expense
                         {
+                            id = rdr.GetInt32(rdr.GetOrdinal("id")),
                             Created = rdr.GetDateTime(rdr.GetOrdinal("time")),
                             Category = rdr.GetString(rdr.GetOrdinal("category")),
                             Description = rdr.GetString(rdr.GetOrdinal("description")),
-                            Amount = rdr.GetInt32(rdr.GetOrdinal("id")),
-                            isProfit = rdr.GetInt32(rdr.GetOrdinal("id")),
+                            Amount = rdr.GetInt32(rdr.GetOrdinal("amount")),
+                            isProfit = rdr.GetInt32(rdr.GetOrdinal("isProfit")),
                             Author = rdr.GetString(rdr.GetOrdinal("author"))
                         };
                         xpenses.Add(xpns);
@@ -57,14 +59,14 @@ namespace MyExpenses_Git.Controllers
         }
 
         // POST: api/Expenses
-        public void Post([FromBody]object expenseData)
+        //public void Post([FromBody]object expenseData)
         // TODO :
-        //public async Task<IHttpActionResult> Post([FromBody]object expenseData)  !!!!!!
+        public IHttpActionResult Post([FromBody]object expenseData)  //!!!!!!
         {
-            Expense result = (Expense)(JsonConvert.DeserializeObject<Expense>(expenseData.ToString()));
+            Expense result = JsonConvert.DeserializeObject<Expense>(expenseData.ToString());
             InsertIntoDb(result);
 
-            //return Redirect(new System.Uri("/api/Expenses"));
+            return Redirect(new System.Uri("http://localhost:2398/api/Expenses"));
         }
 
         private void InsertIntoDb(Expense expense)
@@ -93,7 +95,6 @@ namespace MyExpenses_Git.Controllers
                     }
                 }
             }
-            //System.Threading.Thread.Sleep(2000);
         }
 
         // PUT: api/Expenses/5
