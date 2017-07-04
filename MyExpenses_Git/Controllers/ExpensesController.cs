@@ -29,10 +29,11 @@ namespace MyExpenses_Git.Controllers
                     {
                         var xpns = new Expense
                         {
-                            id = rdr.GetInt32(rdr.GetOrdinal("id")),
                             Created = rdr.GetDateTime(rdr.GetOrdinal("time")),
                             Category = rdr.GetString(rdr.GetOrdinal("category")),
                             Description = rdr.GetString(rdr.GetOrdinal("description")),
+                            Amount = rdr.GetInt32(rdr.GetOrdinal("id")),
+                            isProfit = rdr.GetInt32(rdr.GetOrdinal("id")),
                             Author = rdr.GetString(rdr.GetOrdinal("author"))
                         };
                         xpenses.Add(xpns);
@@ -76,9 +77,10 @@ namespace MyExpenses_Git.Controllers
                 {
                     SQLiteCommand cmd = conn.CreateCommand();
                     string sql_command =
-                        "INSERT INTO myExpenses (time, category, description, author) VALUES ("
+                        "INSERT INTO myExpenses (time, category, description, amount, isProfit, author) VALUES ("
                       + "'" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.sss")
-                      + "', '" + expense.Category + "', '" + expense.Description + "', '" + expense.Author + "');";
+                      + "', '" + expense.Category + "', '" + expense.Description + "', '"
+                      + expense.Amount + "', '" + expense.isProfit + "', '" + expense.Author + "');";
                     cmd.CommandText = sql_command;
                     try
                     {
@@ -90,7 +92,7 @@ namespace MyExpenses_Git.Controllers
                     }
                 }
             }
-            System.Threading.Thread.Sleep(2000);
+            //System.Threading.Thread.Sleep(2000);
         }
 
         // PUT: api/Expenses/5
