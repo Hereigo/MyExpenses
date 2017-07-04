@@ -7,27 +7,31 @@
     <script src="Scripts/jquery-3.1.1.min.js"></script>
 </head>
 <body>
-    <a href="/api/Expenses">Api_Expenses</a>
-    <br />
-    <br />
-    <input id="btn" type="button" value="Get All Values!" />
-    <br />
-    <br />
-    <ul id="ulValues"></ul>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <a href="/api/Expenses">Api_Expenses</a>
+                    <br />
+                    <br />
+                    <input id="btn" type="button" value="Get All Values!" />
+                    <br />
+                    <br />
+                    <ul id="ulValues"></ul>
 
-    <input type="text" id="Category" placeholder="Category...">
-    <br />
-    <input type="text" id="Description" placeholder="Description...">
-    <br />
-    <input type="text" id="Author" placeholder="Author...">
-    <br />
-    <input id="sendExpense" value="Send" type="button">
-
-
+                    <input type="text" id="Category" placeholder="Category...">
+                    <br />
+                    <input type="text" id="Description" placeholder="Description...">
+                    <br />
+                    <input type="text" id="Author" placeholder="Author...">
+                    <br />
+                    <input id="sendExpense" value="Send" type="button">
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!-- S C R I P T S : -->
     <script type="text/javascript">
-
-        //var cat =
-
         $(document).ready(function () {
 
             var myValues = $('#ulValues');
@@ -39,7 +43,8 @@
                     dataType: "json",
                     success: function (data) {
                         $.each(data, function (index, Expense) {
-                            var currVal = Expense.id + ' - ' + Expense.Created + ' - ' + Expense.Category + ' - ' + Expense.Description + ' - ' + Expense.Author;
+                            var currVal = Expense.id + ' - ' + Expense.Created + ' - ' +
+                                Expense.Category + ' - ' + Expense.Description + ' - ' + Expense.Author;
                             myValues.append('<li>' + currVal + '</li>');
                         });
                     }
@@ -65,6 +70,5 @@
             }
         });
     </script>
-
 </body>
 </html>

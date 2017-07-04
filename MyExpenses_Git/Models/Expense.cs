@@ -19,6 +19,7 @@ namespace Web_API.Models
         Prv,
         Bkp,
         Wok,
+        Moo,
         Hom,
         Kid,
         Kiu,
