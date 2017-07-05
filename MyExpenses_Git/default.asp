@@ -9,10 +9,12 @@
         td {
             border: solid 1px black;
         }
+
         #lbl {
             border: 0;
             font-size: large;
         }
+
         input {
             text-align: center;
         }
@@ -20,6 +22,8 @@
 </head>
 <body>
     <div>
+        <table id="ulValues"></table>
+        <hr />
         <table>
             <tr>
                 <td>
@@ -62,7 +66,10 @@
                     success: function (data) {
                         $.each(data, function (index, Expense) {
                             var fullStr = "";
-                            myValues.append('<li>' + Expense.id + ' : ' + Expense.Created + ' : ' + Expense.Category + ' : ' + Expense.Description + ' : ' + Expense.Amount + ' : ' + Expense.isProfit + ' : ' + Expense.Author + '</li>');
+                            myValues.append('<tr><td>' + Expense.id + '</td><td>' + Expense.Created + '</td><td>' +
+                                Expense.Amount + '</td><td>' + Expense.isProfit + '</td><td>' +
+                                Expense.Category + '</td><td>' + Expense.Description + '</td><td>' +
+                                Expense.Author + '</td></tr>');
                         });
                     }
                 });
