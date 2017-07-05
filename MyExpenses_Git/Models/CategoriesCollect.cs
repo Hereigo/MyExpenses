@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace MyExpenses_Git.Models
+﻿namespace MyExpenses_Git.Models
 {
     public class CategoriesCollect
     {
+        public int Pro { get; set; }
         public int Alf { get; set; }
         public int Prv { get; set; }
         public int Bkp { get; set; }

@@ -1,11 +1,11 @@
-﻿using System;
+﻿using MyExpenses_Git.Models;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Data;
 using System.Data.SQLite;
+using System.Linq;
+using System.Web;
 using Web_API.Models;
-using MyExpenses_Git.Models;
 
 namespace MyExpenses_Git
 {
@@ -48,11 +48,12 @@ namespace MyExpenses_Git
         {
             List<Expense> allExpenses = RetrieveAllXpensesFromDb();
 
+            int sumPro = allExpenses.Where(x => x.Category.ToUpper() == "PRO").Select(x => x.Amount).Sum();
+            int sumMoo = allExpenses.Where(x => x.Category.ToUpper() == "MOO").Select(x => x.Amount).Sum();
+
             int sumAlf = allExpenses.Where(x => x.Category.ToUpper() == "ALF").Select(x => x.Amount).Sum();
             int sumPrv = allExpenses.Where(x => x.Category.ToUpper() == "PRV").Select(x => x.Amount).Sum();
             int sumBkp = allExpenses.Where(x => x.Category.ToUpper() == "BKP").Select(x => x.Amount).Sum();
-            int sumMoo = allExpenses.Where(x => x.Category.ToUpper() == "MOO").Select(x => x.Amount).Sum();
-
             int sumCex = allExpenses.Where(x => x.Category.ToUpper() == "CEX").Select(x => x.Amount).Sum();
             int sumClo = allExpenses.Where(x => x.Category.ToUpper() == "CLO").Select(x => x.Amount).Sum();
             int sumCof = allExpenses.Where(x => x.Category.ToUpper() == "COF").Select(x => x.Amount).Sum();
@@ -71,11 +72,12 @@ namespace MyExpenses_Git
             int sumVlg = allExpenses.Where(x => x.Category.ToUpper() == "VLG").Select(x => x.Amount).Sum();
             int sumWok = allExpenses.Where(x => x.Category.ToUpper() == "WOK").Select(x => x.Amount).Sum();
 
-            int sumXXX = (sumAlf + sumPrv + sumBkp + sumMoo) - (sumCex + sumClo + sumCof + sumEnj + sumFoo + sumFrd
+            int sumXXX = (sumPro + sumMoo) - (sumAlf + sumPrv + sumBkp + sumCex + sumClo + sumCof + sumEnj + sumFoo + sumFrd
                 + sumHls + sumHom + sumKid + sumKiu + sumKiv + sumKsh + sumPeb + sumQvn + sumVih + sumVlg + sumWok);
 
             return new CategoriesCollect
             {
+                Pro = sumPro,
                 Alf = sumAlf,
                 Prv = sumPrv,
                 Bkp = sumBkp,
