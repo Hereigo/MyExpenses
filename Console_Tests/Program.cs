@@ -36,7 +36,7 @@ namespace Console_Tests
                       + "[description] text(30) NOT NULL, "
                       + "[amount] integer NOT NULL, "
                       + "[isProfit] integer NOT NULL, "
-                      + "[author] text(30) );"
+                      + "[author] text(30) NOT NULL);"
                       + "INSERT INTO " + tableName + "(time, category, description, amount, isProfit, author) VALUES ("
                       + "'" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.sss")
                       + "', 'Initialization', 'DB has been created.', '0', '0', 'xxx');";

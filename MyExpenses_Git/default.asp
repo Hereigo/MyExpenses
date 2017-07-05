@@ -10,7 +10,7 @@
             border: solid 1px black;
         }
 
-        #lbl {
+        label {
             border: 0;
             font-size: large;
         }
@@ -22,32 +22,32 @@
 </head>
 <body>
     <div>
-        <table id="ulValues"></table>
-        <hr />
-        <table>
+        <table id="xpensTbl">
             <tr>
                 <td>
-                    <input type="text" id="categSum" placeholder="error!" maxlength="6" size="6" readonly />
-                    <input type="text" id="lbl" value="ALF" maxlength="4" size="4">
-                    <input type="text" id="Amount" placeholder="$$$  ->" maxlength="6" size="6">
-                    <input type="text" id="isProfit" value="0" maxlength="1" size="1">
-                    <input type="text" id="Author" placeholder="Author...">
-                    <input type="text" id="Description" placeholder="Description...">
-                    <input id="sendExpense" value="Send" type="button">
+                    <input type="text" id="ALFcatSum" placeholder="error!" maxlength="6" size="6" readonly />
+                    <label>ALF </label>
+                    <input type="text" id="ALFamount" placeholder="$$$  ->" maxlength="6" size="6">
+                    <input type="text" id="ALFisProfit" placeholder="0" maxlength="1" size="1">
+                    <input type="text" id="ALFauthor" placeholder="Author...">
+                    <input type="text" id="ALFdescription" placeholder="Description...">
+                    <input type="button" id="ALFsendExpense" value="Send">
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type="text" id="categSum" placeholder="error!" maxlength="6" size="6" readonly />
-                    <input type="text" id="lbl" value="PRV" maxlength="4" size="4">
-                    <input type="text" id="Amount" placeholder="$$$  ->" maxlength="6" size="6">
-                    <input type="text" id="isProfit" value="0" maxlength="1" size="1">
-                    <input type="text" id="Author" placeholder="Author...">
-                    <input type="text" id="Description" placeholder="Description...">
-                    <input id="sendExpense" value="Send" type="button">
+                    <input type="text" id="PRVcatSum" placeholder="error!" maxlength="6" size="6" readonly />
+                    <label>PRV </label>
+                    <input type="text" id="PRVamount" placeholder="$$$  ->" maxlength="6" size="6">
+                    <input type="text" id="PRVisProfit" placeholder="0" maxlength="1" size="1">
+                    <input type="text" id="PRVauthor" placeholder="Author...">
+                    <input type="text" id="PRVdescription" placeholder="Description...">
+                    <input type="button" id="PRVsendExpense" value="Send">
                 </td>
             </tr>
         </table>
+        <hr />
+        <table id="ulValues"></table>
     </div>
     <!-- ----------------- S C R I P T S : ------------------- -->
     <script type="text/javascript">
@@ -55,10 +55,10 @@
 
             window.onload = (function GetAllExpenses() {
 
+                clearTableFields();
+
                 var myValues = $('#ulValues');
-
                 myValues.empty();
-
                 $.ajax({
                     type: "GET",
                     url: "/api/Expenses",
@@ -73,20 +73,32 @@
                         });
                     }
                 });
-            })();
 
-            $('#sendExpense').bind("click", GeneralPost);
-
-            function GeneralPost() {
-
-                var Expense = {
-                    Category: $('#Category').val(),
-                    Description: $('#Description').val(),
-                    Author: $('#Author').val(),
-                    Amount: $('#Amount').val(),
-                    isProfit: $('#isProfit').val()
+                function clearTableFields() {
+                    var container, inputs, index;
+                    container = document.getElementById('xpensTbl');
+                    inputs = container.getElementsByTagName('input');
+                    for (index = 0; index < inputs.length; ++index) {
+                        if (inputs[index].type == "text")
+                            inputs[index].value = '';
+                    }
                 };
 
+                // TODO: 
+                // Fill the table !!!
+
+            })(); // window.onload = (function GetAllExpenses() {
+
+            /////////////////////////////////////////////////////
+
+            $('#ALFsendExpense').bind("click", function () {
+                var Expense = {
+                    Category: 'ALF',
+                    Description: $('#ALFdescription').val(),
+                    Author: $('#ALFauthor').val(),
+                    Amount: $('#ALFamount').val(),
+                    isProfit: $('#ALFisProfit').val()
+                };
                 $.ajax({
                     type: 'POST',
                     url: '/api/Expenses',
@@ -94,7 +106,30 @@
                     contentType: 'application/json; charset=utf-8',
                     dataType: 'json'
                 });
-            }
+                setTimeout(function () {
+                    window.location.reload();
+                }, 5000);
+            });
+
+            $('#PRVsendExpense').bind("click", function () {
+                var Expense = {
+                    Category: 'PRV',
+                    Description: $('#PRVdescription').val(),
+                    Author: $('#PRVauthor').val(),
+                    Amount: $('#PRVamount').val(),
+                    isProfit: $('#PRVisProfit').val()
+                };
+                $.ajax({
+                    type: 'POST',
+                    url: '/api/Expenses',
+                    data: JSON.stringify(Expense),
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'json'
+                });
+                setTimeout(function () {
+                    window.location.reload();
+                }, 5000);
+            });
 
         });// $(document).ready(function () {
     </script>

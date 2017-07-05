@@ -23,11 +23,12 @@ namespace MyExpenses_Git.Controllers
         }
 
         // POST: api/Expenses
-        public IHttpActionResult Post([FromBody]object expenseData)  //!!!!!!
+        // public IHttpActionResult Post([FromBody]object expenseData)  //!!!!!!
+		public void Post([FromBody]object expenseData)  //!!!!!!
         {
             Expense result = JsonConvert.DeserializeObject<Expense>(expenseData.ToString());
             SqliteUse.InsertIntoDb(result);
-            return Redirect(new System.Uri("http://localhost:2398/api/Expenses"));
+            // return Redirect(new System.Uri("http://localhost:2398/api/Expenses/2"));
         }
 
         // PUT: api/Expenses/5
