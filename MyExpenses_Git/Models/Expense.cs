@@ -12,29 +12,4 @@ namespace Web_API.Models
         public int Amount { get; set; }
         public int isProfit { get; set; }
     }
-
-    public enum Category
-    {
-        Alf,
-        Prv,
-        Bkp,
-        Wok,
-        Moo,
-        Hom,
-        Kid,
-        Kiu,
-        Kiv,
-        Qvn,
-        Foo,
-        Cof,
-        Enj,
-        Peb,
-        Hls,
-        Clo,
-        Vih,
-        Vlg,
-        Frd,
-        Ksh,
-        Cex
-    }
 }

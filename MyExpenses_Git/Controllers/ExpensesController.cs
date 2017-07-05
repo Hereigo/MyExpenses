@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using MyExpenses_Git.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -11,9 +12,13 @@ namespace MyExpenses_Git.Controllers
     public class ExpensesController : ApiController
     {
         // GET: api/Expenses
-        public IEnumerable<Expense> Get()
+        //public IEnumerable<Expense> Get()
+        //{
+        //    return SqliteUse.RetrieveAllXpensesFromDb().ToArray();
+        //}
+        public CategoriesCollect Get()
         {
-            return SqliteUse.RetrieveFromDb().ToArray();
+            return SqliteUse.GetCategoriesCollection();
         }
 
         // GET: api/Expenses/5
@@ -24,7 +29,7 @@ namespace MyExpenses_Git.Controllers
 
         // POST: api/Expenses
         // public IHttpActionResult Post([FromBody]object expenseData)  //!!!!!!
-		public void Post([FromBody]object expenseData)  //!!!!!!
+        public void Post([FromBody]object expenseData)  //!!!!!!
         {
             Expense result = JsonConvert.DeserializeObject<Expense>(expenseData.ToString());
             SqliteUse.InsertIntoDb(result);

@@ -5,12 +5,13 @@ using System.Web;
 using System.Data;
 using System.Data.SQLite;
 using Web_API.Models;
+using MyExpenses_Git.Models;
 
 namespace MyExpenses_Git
 {
     public static class SqliteUse
     {
-        public static List<Expense> RetrieveFromDb()
+        public static List<Expense> RetrieveAllXpensesFromDb()
         {
             List<Expense> xpenses = new List<Expense>();
 
@@ -41,6 +42,63 @@ namespace MyExpenses_Git
                 }
             }
             return xpenses;
+        }
+
+        public static CategoriesCollect GetCategoriesCollection()
+        {
+            List<Expense> allExpenses = RetrieveAllXpensesFromDb();
+
+            int sumAlf = allExpenses.Where(x => x.Category.ToUpper() == "ALF").Select(x => x.Amount).Sum();
+            int sumPrv = allExpenses.Where(x => x.Category.ToUpper() == "PRV").Select(x => x.Amount).Sum();
+            int sumBkp = allExpenses.Where(x => x.Category.ToUpper() == "BKP").Select(x => x.Amount).Sum();
+            int sumMoo = allExpenses.Where(x => x.Category.ToUpper() == "MOO").Select(x => x.Amount).Sum();
+
+            int sumCex = allExpenses.Where(x => x.Category.ToUpper() == "CEX").Select(x => x.Amount).Sum();
+            int sumClo = allExpenses.Where(x => x.Category.ToUpper() == "CLO").Select(x => x.Amount).Sum();
+            int sumCof = allExpenses.Where(x => x.Category.ToUpper() == "COF").Select(x => x.Amount).Sum();
+            int sumEnj = allExpenses.Where(x => x.Category.ToUpper() == "ENJ").Select(x => x.Amount).Sum();
+            int sumFoo = allExpenses.Where(x => x.Category.ToUpper() == "FOO").Select(x => x.Amount).Sum();
+            int sumFrd = allExpenses.Where(x => x.Category.ToUpper() == "FRD").Select(x => x.Amount).Sum();
+            int sumHls = allExpenses.Where(x => x.Category.ToUpper() == "HLS").Select(x => x.Amount).Sum();
+            int sumHom = allExpenses.Where(x => x.Category.ToUpper() == "HOM").Select(x => x.Amount).Sum();
+            int sumKid = allExpenses.Where(x => x.Category.ToUpper() == "KID").Select(x => x.Amount).Sum();
+            int sumKiu = allExpenses.Where(x => x.Category.ToUpper() == "KIU").Select(x => x.Amount).Sum();
+            int sumKiv = allExpenses.Where(x => x.Category.ToUpper() == "KIV").Select(x => x.Amount).Sum();
+            int sumKsh = allExpenses.Where(x => x.Category.ToUpper() == "KSH").Select(x => x.Amount).Sum();
+            int sumPeb = allExpenses.Where(x => x.Category.ToUpper() == "PEB").Select(x => x.Amount).Sum();
+            int sumQvn = allExpenses.Where(x => x.Category.ToUpper() == "QVN").Select(x => x.Amount).Sum();
+            int sumVih = allExpenses.Where(x => x.Category.ToUpper() == "VIH").Select(x => x.Amount).Sum();
+            int sumVlg = allExpenses.Where(x => x.Category.ToUpper() == "VLG").Select(x => x.Amount).Sum();
+            int sumWok = allExpenses.Where(x => x.Category.ToUpper() == "WOK").Select(x => x.Amount).Sum();
+
+            int sumXXX = (sumAlf + sumPrv + sumBkp + sumMoo) - (sumCex + sumClo + sumCof + sumEnj + sumFoo + sumFrd
+                + sumHls + sumHom + sumKid + sumKiu + sumKiv + sumKsh + sumPeb + sumQvn + sumVih + sumVlg + sumWok);
+
+            return new CategoriesCollect
+            {
+                Alf = sumAlf,
+                Prv = sumPrv,
+                Bkp = sumBkp,
+                Cex = sumCex,
+                Clo = sumClo,
+                Cof = sumCof,
+                Enj = sumEnj,
+                Foo = sumFoo,
+                Frd = sumFrd,
+                Hls = sumHls,
+                Hom = sumHom,
+                Kid = sumKid,
+                Kiu = sumKiu,
+                Kiv = sumKiv,
+                Ksh = sumKsh,
+                Moo = sumMoo,
+                Peb = sumPeb,
+                Qvn = sumQvn,
+                Vih = sumVih,
+                Vlg = sumVlg,
+                Wok = sumWok,
+                XXX = sumXXX
+            };
         }
 
         public static void InsertIntoDb(Expense expense)
