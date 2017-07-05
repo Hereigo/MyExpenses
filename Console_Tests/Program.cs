@@ -8,6 +8,17 @@ namespace Console_Tests
     {
         static void Main(string[] args)
         {
+            ConvertBase64 conv = new ConvertBase64();
+            conv.Converter();
+            Console.WriteLine();
+
+
+            CreateSqliteDb();
+
+        }
+
+        private static void CreateSqliteDb()
+        {
             SQLiteConnection conn = new SQLiteConnection("Data Source=aaaSqlite.db; Version=3;");
             try
             {
