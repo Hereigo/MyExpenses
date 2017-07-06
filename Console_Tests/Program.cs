@@ -34,7 +34,7 @@ namespace Console_Tests
                       + "[time] text(25) NOT NULL, "
                       + "[category] text(15) NOT NULL, "
                       + "[description] text(30) NOT NULL, "
-                      + "[amount] float NOT NULL, "
+                      + "[amount] integer NOT NULL, "
                       + "[author] text(30) NOT NULL);"
                       + "INSERT INTO " + tableName + "(time, category, description, amount, author) VALUES ("
                       + "'" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.sss")

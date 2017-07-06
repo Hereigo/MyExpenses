@@ -9,7 +9,7 @@ namespace Web_API.Models
         public string Category { get; set; }
         public string Description { get; set; }
         public string Author { get; set; }
-        public float Amount { get; set; }
+        public int Amount { get; set; }
         public int isProfit { get; set; }
     }
 }

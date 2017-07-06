@@ -33,7 +33,7 @@ namespace MyExpenses_Git
                             Created = rdr.GetDateTime(rdr.GetOrdinal("time")),
                             Category = rdr.GetString(rdr.GetOrdinal("category")),
                             Description = rdr.GetString(rdr.GetOrdinal("description")),
-                            Amount = rdr.GetFloat(rdr.GetOrdinal("amount")),
+                            Amount = rdr.GetInt32(rdr.GetOrdinal("amount")),
                             Author = rdr.GetString(rdr.GetOrdinal("author"))
                         };
                         xpenses.Add(xpns);
@@ -47,31 +47,32 @@ namespace MyExpenses_Git
         {
             List<Expense> allExpenses = RetrieveAllXpensesFromDb();
 
-            float sumPro = allExpenses.Where(x => x.Category.ToUpper() == "PRO").Select(x => x.Amount).Sum();
-            float sumMoo = allExpenses.Where(x => x.Category.ToUpper() == "MOO").Select(x => x.Amount).Sum();
+            int sumPro = allExpenses.Where(x => x.Category.ToUpper() == "PRO").Select(x => x.Amount).Sum();
+            int sumMoo = allExpenses.Where(x => x.Category.ToUpper() == "MOO").Select(x => x.Amount).Sum();
 
-            float sumAlf = allExpenses.Where(x => x.Category.ToUpper() == "ALF").Select(x => x.Amount).Sum();
-            float sumPrv = allExpenses.Where(x => x.Category.ToUpper() == "PRV").Select(x => x.Amount).Sum();
-            float sumBkp = allExpenses.Where(x => x.Category.ToUpper() == "BKP").Select(x => x.Amount).Sum();
-            float sumCex = allExpenses.Where(x => x.Category.ToUpper() == "CEX").Select(x => x.Amount).Sum();
-            float sumClo = allExpenses.Where(x => x.Category.ToUpper() == "CLO").Select(x => x.Amount).Sum();
-            float sumCof = allExpenses.Where(x => x.Category.ToUpper() == "COF").Select(x => x.Amount).Sum();
-            float sumEnj = allExpenses.Where(x => x.Category.ToUpper() == "ENJ").Select(x => x.Amount).Sum();
-            float sumFoo = allExpenses.Where(x => x.Category.ToUpper() == "FOO").Select(x => x.Amount).Sum();
-            float sumFrd = allExpenses.Where(x => x.Category.ToUpper() == "FRD").Select(x => x.Amount).Sum();
-            float sumHls = allExpenses.Where(x => x.Category.ToUpper() == "HLS").Select(x => x.Amount).Sum();
-            float sumHom = allExpenses.Where(x => x.Category.ToUpper() == "HOM").Select(x => x.Amount).Sum();
-            float sumKid = allExpenses.Where(x => x.Category.ToUpper() == "KID").Select(x => x.Amount).Sum();
-            float sumKiu = allExpenses.Where(x => x.Category.ToUpper() == "KIU").Select(x => x.Amount).Sum();
-            float sumKiv = allExpenses.Where(x => x.Category.ToUpper() == "KIV").Select(x => x.Amount).Sum();
-            float sumKsh = allExpenses.Where(x => x.Category.ToUpper() == "KSH").Select(x => x.Amount).Sum();
-            float sumPeb = allExpenses.Where(x => x.Category.ToUpper() == "PEB").Select(x => x.Amount).Sum();
-            float sumQvn = allExpenses.Where(x => x.Category.ToUpper() == "QVN").Select(x => x.Amount).Sum();
-            float sumVih = allExpenses.Where(x => x.Category.ToUpper() == "VIH").Select(x => x.Amount).Sum();
-            float sumVlg = allExpenses.Where(x => x.Category.ToUpper() == "VLG").Select(x => x.Amount).Sum();
-            float sumWok = allExpenses.Where(x => x.Category.ToUpper() == "WOK").Select(x => x.Amount).Sum();
+            int sumAlf = allExpenses.Where(x => x.Category.ToUpper() == "ALF").Select(x => x.Amount).Sum();
+            int sumPrv = allExpenses.Where(x => x.Category.ToUpper() == "PRV").Select(x => x.Amount).Sum();
+            int sumBkp = allExpenses.Where(x => x.Category.ToUpper() == "BKP").Select(x => x.Amount).Sum();
+            int sumCex = allExpenses.Where(x => x.Category.ToUpper() == "CEX").Select(x => x.Amount).Sum();
 
-            float sumXXX = (sumPro + sumMoo) - (sumAlf + sumPrv + sumBkp + sumCex + sumClo + sumCof + sumEnj + sumFoo + sumFrd
+            int sumClo = allExpenses.Where(x => x.Category.ToUpper() == "CLO").Select(x => x.Amount).Sum();
+            int sumCof = allExpenses.Where(x => x.Category.ToUpper() == "COF").Select(x => x.Amount).Sum();
+            int sumEnj = allExpenses.Where(x => x.Category.ToUpper() == "ENJ").Select(x => x.Amount).Sum();
+            int sumFoo = allExpenses.Where(x => x.Category.ToUpper() == "FOO").Select(x => x.Amount).Sum();
+            int sumFrd = allExpenses.Where(x => x.Category.ToUpper() == "FRD").Select(x => x.Amount).Sum();
+            int sumHls = allExpenses.Where(x => x.Category.ToUpper() == "HLS").Select(x => x.Amount).Sum();
+            int sumHom = allExpenses.Where(x => x.Category.ToUpper() == "HOM").Select(x => x.Amount).Sum();
+            int sumKid = allExpenses.Where(x => x.Category.ToUpper() == "KID").Select(x => x.Amount).Sum();
+            int sumKiu = allExpenses.Where(x => x.Category.ToUpper() == "KIU").Select(x => x.Amount).Sum();
+            int sumKiv = allExpenses.Where(x => x.Category.ToUpper() == "KIV").Select(x => x.Amount).Sum();
+            int sumKsh = allExpenses.Where(x => x.Category.ToUpper() == "KSH").Select(x => x.Amount).Sum();
+            int sumPeb = allExpenses.Where(x => x.Category.ToUpper() == "PEB").Select(x => x.Amount).Sum();
+            int sumQvn = allExpenses.Where(x => x.Category.ToUpper() == "QVN").Select(x => x.Amount).Sum();
+            int sumVih = allExpenses.Where(x => x.Category.ToUpper() == "VIH").Select(x => x.Amount).Sum();
+            int sumVlg = allExpenses.Where(x => x.Category.ToUpper() == "VLG").Select(x => x.Amount).Sum();
+            int sumWok = allExpenses.Where(x => x.Category.ToUpper() == "WOK").Select(x => x.Amount).Sum();
+
+            int sumXXX = (sumPro + sumMoo) - (sumAlf + sumPrv + sumBkp + sumCex + sumClo + sumCof + sumEnj + sumFoo + sumFrd
                 + sumHls + sumHom + sumKid + sumKiu + sumKiv + sumKsh + sumPeb + sumQvn + sumVih + sumVlg + sumWok);
 
             return new CategoriesCollect
@@ -113,7 +114,7 @@ namespace MyExpenses_Git
                 {
                     SQLiteCommand cmd = conn.CreateCommand();
                     string sql_command =
-                        "INSERT INTO myExpenses (time, category, description, amount, isProfit, author) VALUES ("
+                        "INSERT INTO myExpenses (time, category, description, amount, author) VALUES ("
                       + "'" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.sss")
                       + "', '" + expense.Category + "', '" + expense.Description + "', '"
                       + expense.Amount + "', '" + expense.Author + "');";
