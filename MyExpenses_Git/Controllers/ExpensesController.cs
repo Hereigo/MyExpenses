@@ -29,7 +29,7 @@ namespace MyExpenses_Git.Controllers
         {
             Expense result = JsonConvert.DeserializeObject<Expense>(expenseData.ToString());
 
-            if (result.Author.ToLower() == "andruxa")
+            if (result.Author.Trim().ToLower() == "andruxa" && result.Description.Trim().Length > 2)
             {
                 SqliteUse.InsertIntoDb(result);
             }

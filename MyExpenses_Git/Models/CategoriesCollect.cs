@@ -24,6 +24,7 @@
         public int Frd { get; set; }
         public int Ksh { get; set; }
         public int Cex { get; set; }
+        public string Modif { get; set; }
         public int XXX { get; set; }
     }
 }

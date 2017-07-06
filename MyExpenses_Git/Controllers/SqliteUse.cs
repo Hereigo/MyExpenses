@@ -47,6 +47,8 @@ namespace MyExpenses_Git
         {
             List<Expense> allExpenses = RetrieveAllXpensesFromDb();
 
+            string modif = allExpenses.Select(x => x.Created).Max().ToString("dd__HH:mm:ss");
+
             int sumPro = allExpenses.Where(x => x.Category.ToUpper() == "PRO").Select(x => x.Amount).Sum();
             int sumMoo = allExpenses.Where(x => x.Category.ToUpper() == "MOO").Select(x => x.Amount).Sum();
 
@@ -99,6 +101,7 @@ namespace MyExpenses_Git
                 Vih = sumVih,
                 Vlg = sumVlg,
                 Wok = sumWok,
+                Modif = modif,
                 XXX = sumXXX
             };
         }

@@ -6,6 +6,7 @@
     <meta name="description" content="ASP.NET hosting, SQL hosting, AJAX Hosting, Silverlight hosting, LINQ Hosting, Microsoft Windows 2012 hosting, iis8 hosting, Windows 2012 R2 hosting, iis8.5 hosting.">
     <script src="Scripts/jquery-3.1.1.min.js"></script>
     <style>
+
         td {
             border: solid 1px black;
             font-family: "Courier New", Courier, monospace;
@@ -31,12 +32,19 @@
             font-size: xx-large;
             text-align:left;
         }
+        #Modif {
+            border: 0;
+            font-size: xx-large;
+        }
     </style>
 </head>
 <body>
     <div>
         REST:
-        <input type="text" id="XXXcatSum" readonly placeholder="error!" />
+        <input type="text" id="XXXcatSum" readonly placeholder="error!" maxlength="6" size="6"/>
+        MODIFIED:
+        <input type="text" id="Modif" readonly placeholder="error!" maxlength="11" size="11"/>
+
         <!--<table id="ulValues"></table>-->
         <hr />
         <table id="xpensTbl">
@@ -343,6 +351,7 @@
                         $('#FRDcatSum').val(data.Frd);
                         $('#KSHcatSum').val(data.Ksh);
                         $('#CEXcatSum').val(data.Cex);
+                        $('#Modif').val(data.Modif);
                         $('#XXXcatSum').val(data.XXX);
                     }
                 });
