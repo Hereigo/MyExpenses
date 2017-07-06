@@ -2,28 +2,28 @@
 {
     public class CategoriesCollect
     {
-        public int Pro { get; set; }
-        public int Alf { get; set; }
-        public int Prv { get; set; }
-        public int Bkp { get; set; }
-        public int Wok { get; set; }
-        public int Moo { get; set; }
-        public int Hom { get; set; }
-        public int Kid { get; set; }
-        public int Kiu { get; set; }
-        public int Kiv { get; set; }
-        public int Qvn { get; set; }
-        public int Foo { get; set; }
-        public int Cof { get; set; }
-        public int Enj { get; set; }
-        public int Peb { get; set; }
-        public int Hls { get; set; }
-        public int Clo { get; set; }
-        public int Vih { get; set; }
-        public int Vlg { get; set; }
-        public int Frd { get; set; }
-        public int Ksh { get; set; }
-        public int Cex { get; set; }
-        public int XXX { get; set; }
+        public float Pro { get; set; }
+        public float Alf { get; set; }
+        public float Prv { get; set; }
+        public float Bkp { get; set; }
+        public float Wok { get; set; }
+        public float Moo { get; set; }
+        public float Hom { get; set; }
+        public float Kid { get; set; }
+        public float Kiu { get; set; }
+        public float Kiv { get; set; }
+        public float Qvn { get; set; }
+        public float Foo { get; set; }
+        public float Cof { get; set; }
+        public float Enj { get; set; }
+        public float Peb { get; set; }
+        public float Hls { get; set; }
+        public float Clo { get; set; }
+        public float Vih { get; set; }
+        public float Vlg { get; set; }
+        public float Frd { get; set; }
+        public float Ksh { get; set; }
+        public float Cex { get; set; }
+        public float XXX { get; set; }
     }
 }

@@ -34,12 +34,11 @@ namespace Console_Tests
                       + "[time] text(25) NOT NULL, "
                       + "[category] text(15) NOT NULL, "
                       + "[description] text(30) NOT NULL, "
-                      + "[amount] integer NOT NULL, "
-                      + "[isProfit] integer NOT NULL, "
+                      + "[amount] float NOT NULL, "
                       + "[author] text(30) NOT NULL);"
-                      + "INSERT INTO " + tableName + "(time, category, description, amount, isProfit, author) VALUES ("
+                      + "INSERT INTO " + tableName + "(time, category, description, amount, author) VALUES ("
                       + "'" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.sss")
-                      + "', 'Initialization', 'DB has been created.', '0', '0', 'xxx');";
+                      + "', 'Initialization', 'DB has been created.', '0', 'xxx');";
                     cmd.CommandText = sql_command;
                     try
                     {

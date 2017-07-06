@@ -31,7 +31,6 @@
                     <label>SUM.</label>
                     <label>CAT.</label>
                     <label>$$$</label>
-                    <label>???</label>
                     <label>#.AUTHOR.#</label>
                     <label>description.</label>
                     <label></label>
@@ -42,7 +41,6 @@
                     <input type="text" id="PROcatSum" placeholder="error!" maxlength="6" size="4" readonly />
                     <label>PRO </label>
                     <input type="text" id="PROamount" placeholder="$$$  ->" maxlength="6" size="4">
-                    <input type="text" id="PROisProfit" maxlength="1" size="1">
                     <input type="text" id="PROauthor" placeholder="Author...">
                     <input type="text" id="PROdescription" placeholder="Description...">
                     <input type="button" id="PROsendExpense" value="Test">
@@ -53,7 +51,6 @@
                     <input type="text" id="MOOcatSum" placeholder="error!" maxlength="6" size="4" readonly />
                     <label>MOO </label>
                     <input type="text" id="MOOamount" placeholder="$$$  ->" maxlength="6" size="4">
-                    <input type="text" id="MOOisProfit" maxlength="1" size="1">
                     <input type="text" id="MOOauthor" placeholder="Author...">
                     <input type="text" id="MOOdescription" placeholder="Description...">
                     <input type="button" id="MOOsendExpense" value="Test">
@@ -70,7 +67,6 @@
                     <input type="text" id="ALFcatSum" placeholder="error!" maxlength="6" size="4" />
                     <label>ALF </label>
                     <input type="text" id="ALFamount" placeholder="$$$  ->" maxlength="6" size="4">
-                    <input type="text" id="ALFisProfit" maxlength="1" size="1">
                     <input type="text" id="ALFauthor" placeholder="Author...">
                     <input type="text" id="ALFdescription" placeholder="Description...">
                     <input type="button" id="ALFsendExpense" value="Test">
@@ -81,7 +77,6 @@
                     <input type="text" id="PRVcatSum" placeholder="error!" maxlength="6" size="4" readonly />
                     <label>PRV </label>
                     <input type="text" id="PRVamount" placeholder="$$$  ->" maxlength="6" size="4">
-                    <input type="text" id="PRVisProfit" maxlength="1" size="1">
                     <input type="text" id="PRVauthor" placeholder="Author...">
                     <input type="text" id="PRVdescription" placeholder="Description...">
                     <input type="button" id="PRVsendExpense" value="Test">
@@ -92,7 +87,6 @@
                     <input type="text" id="BKPcatSum" placeholder="error!" maxlength="6" size="4" readonly />
                     <label>BKP </label>
                     <input type="text" id="BKPamount" placeholder="$$$  ->" maxlength="6" size="4">
-                    <input type="text" id="BKPisProfit" maxlength="1" size="1">
                     <input type="text" id="BKPauthor" placeholder="Author...">
                     <input type="text" id="BKPdescription" placeholder="Description...">
                     <input type="button" id="BKPsendExpense" value="Test">
@@ -109,7 +103,6 @@
                     <input type="text" id="WOKcatSum" placeholder="error!" maxlength="6" size="4" readonly />
                     <label>WOK </label>
                     <input type="text" id="WOKamount" placeholder="$$$  ->" maxlength="6" size="4">
-                    <input type="text" id="WOKisProfit" maxlength="1" size="1">
                     <input type="text" id="WOKauthor" placeholder="Author...">
                     <input type="text" id="WOKdescription" placeholder="Description...">
                     <input type="button" id="WOKsendExpense" value="Test">
@@ -120,7 +113,6 @@
                     <input type="text" id="HOMcatSum" placeholder="error!" maxlength="6" size="4" readonly />
                     <label>HOM </label>
                     <input type="text" id="HOMamount" placeholder="$$$  ->" maxlength="6" size="4">
-                    <input type="text" id="HOMisProfit" maxlength="1" size="1">
                     <input type="text" id="HOMauthor" placeholder="Author...">
                     <input type="text" id="HOMdescription" placeholder="Description...">
                     <input type="button" id="HOMsendExpense" value="Test">
@@ -131,7 +123,6 @@
                     <input type="text" id="KIDcatSum" placeholder="error!" maxlength="6" size="4" readonly />
                     <label>KID </label>
                     <input type="text" id="KIDamount" placeholder="$$$  ->" maxlength="6" size="4">
-                    <input type="text" id="KIDisProfit" maxlength="1" size="1">
                     <input type="text" id="KIDauthor" placeholder="Author...">
                     <input type="text" id="KIDdescription" placeholder="Description...">
                     <input type="button" id="KIDsendExpense" value="Test">
@@ -142,7 +133,6 @@
                     <input type="text" id="KIUcatSum" placeholder="error!" maxlength="6" size="4" readonly />
                     <label>KIU </label>
                     <input type="text" id="KIUamount" placeholder="$$$  ->" maxlength="6" size="4">
-                    <input type="text" id="KIUisProfit" maxlength="1" size="1">
                     <input type="text" id="KIUauthor" placeholder="Author...">
                     <input type="text" id="KIUdescription" placeholder="Description...">
                     <input type="button" id="KIUsendExpense" value="Test">
@@ -153,7 +143,6 @@
                     <input type="text" id="KIVcatSum" placeholder="error!" maxlength="6" size="4" readonly />
                     <label>KIV </label>
                     <input type="text" id="KIVamount" placeholder="$$$  ->" maxlength="6" size="4">
-                    <input type="text" id="KIVisProfit" maxlength="1" size="1">
                     <input type="text" id="KIVauthor" placeholder="Author...">
                     <input type="text" id="KIVdescription" placeholder="Description...">
                     <input type="button" id="KIVsendExpense" value="Test">
@@ -164,7 +153,6 @@
                     <input type="text" id="QVNcatSum" placeholder="error!" maxlength="6" size="4" readonly />
                     <label>QVN </label>
                     <input type="text" id="QVNamount" placeholder="$$$  ->" maxlength="6" size="4">
-                    <input type="text" id="QVNisProfit" maxlength="1" size="1">
                     <input type="text" id="QVNauthor" placeholder="Author...">
                     <input type="text" id="QVNdescription" placeholder="Description...">
                     <input type="button" id="QVNsendExpense" value="Test">
@@ -175,7 +163,6 @@
                     <input type="text" id="FOOcatSum" placeholder="error!" maxlength="6" size="4" readonly />
                     <label>FOO </label>
                     <input type="text" id="FOOamount" placeholder="$$$  ->" maxlength="6" size="4">
-                    <input type="text" id="FOOisProfit" maxlength="1" size="1">
                     <input type="text" id="FOOauthor" placeholder="Author...">
                     <input type="text" id="FOOdescription" placeholder="Description...">
                     <input type="button" id="FOOsendExpense" value="Test">
@@ -186,7 +173,6 @@
                     <input type="text" id="COFcatSum" placeholder="error!" maxlength="6" size="4" readonly />
                     <label>COF </label>
                     <input type="text" id="COFamount" placeholder="$$$  ->" maxlength="6" size="4">
-                    <input type="text" id="COFisProfit" maxlength="1" size="1">
                     <input type="text" id="COFauthor" placeholder="Author...">
                     <input type="text" id="COFdescription" placeholder="Description...">
                     <input type="button" id="COFsendExpense" value="Test">
@@ -197,7 +183,6 @@
                     <input type="text" id="ENJcatSum" placeholder="error!" maxlength="6" size="4" readonly />
                     <label>ENJ </label>
                     <input type="text" id="ENJamount" placeholder="$$$  ->" maxlength="6" size="4">
-                    <input type="text" id="ENJisProfit" maxlength="1" size="1">
                     <input type="text" id="ENJauthor" placeholder="Author...">
                     <input type="text" id="ENJdescription" placeholder="Description...">
                     <input type="button" id="ENJsendExpense" value="Test">
@@ -208,7 +193,6 @@
                     <input type="text" id="PEBcatSum" placeholder="error!" maxlength="6" size="4" readonly />
                     <label>PEB </label>
                     <input type="text" id="PEBamount" placeholder="$$$  ->" maxlength="6" size="4">
-                    <input type="text" id="PEBisProfit" maxlength="1" size="1">
                     <input type="text" id="PEBauthor" placeholder="Author...">
                     <input type="text" id="PEBdescription" placeholder="Description...">
                     <input type="button" id="PEBsendExpense" value="Test">
@@ -219,7 +203,6 @@
                     <input type="text" id="HLScatSum" placeholder="error!" maxlength="6" size="4" readonly />
                     <label>HLS </label>
                     <input type="text" id="HLSamount" placeholder="$$$  ->" maxlength="6" size="4">
-                    <input type="text" id="HLSisProfit" maxlength="1" size="1">
                     <input type="text" id="HLSauthor" placeholder="Author...">
                     <input type="text" id="HLSdescription" placeholder="Description...">
                     <input type="button" id="HLSsendExpense" value="Test">
@@ -230,7 +213,6 @@
                     <input type="text" id="CLOcatSum" placeholder="error!" maxlength="6" size="4" readonly />
                     <label>CLO </label>
                     <input type="text" id="CLOamount" placeholder="$$$  ->" maxlength="6" size="4">
-                    <input type="text" id="CLOisProfit" maxlength="1" size="1">
                     <input type="text" id="CLOauthor" placeholder="Author...">
                     <input type="text" id="CLOdescription" placeholder="Description...">
                     <input type="button" id="CLOsendExpense" value="Test">
@@ -241,7 +223,6 @@
                     <input type="text" id="VIHcatSum" placeholder="error!" maxlength="6" size="4" readonly />
                     <label>VIH </label>
                     <input type="text" id="VIHamount" placeholder="$$$  ->" maxlength="6" size="4">
-                    <input type="text" id="VIHisProfit" maxlength="1" size="1">
                     <input type="text" id="VIHauthor" placeholder="Author...">
                     <input type="text" id="VIHdescription" placeholder="Description...">
                     <input type="button" id="VIHsendExpense" value="Test">
@@ -252,7 +233,6 @@
                     <input type="text" id="VLGcatSum" placeholder="error!" maxlength="6" size="4" readonly />
                     <label>VLG </label>
                     <input type="text" id="VLGamount" placeholder="$$$  ->" maxlength="6" size="4">
-                    <input type="text" id="VLGisProfit" maxlength="1" size="1">
                     <input type="text" id="VLGauthor" placeholder="Author...">
                     <input type="text" id="VLGdescription" placeholder="Description...">
                     <input type="button" id="VLGsendExpense" value="Test">
@@ -263,7 +243,6 @@
                     <input type="text" id="FRDcatSum" placeholder="error!" maxlength="6" size="4" readonly />
                     <label>FRD </label>
                     <input type="text" id="FRDamount" placeholder="$$$  ->" maxlength="6" size="4">
-                    <input type="text" id="FRDisProfit" maxlength="1" size="1">
                     <input type="text" id="FRDauthor" placeholder="Author...">
                     <input type="text" id="FRDdescription" placeholder="Description...">
                     <input type="button" id="FRDsendExpense" value="Test">
@@ -274,7 +253,6 @@
                     <input type="text" id="KSHcatSum" placeholder="error!" maxlength="6" size="4" readonly />
                     <label>KSH </label>
                     <input type="text" id="KSHamount" placeholder="$$$  ->" maxlength="6" size="4">
-                    <input type="text" id="KSHisProfit" maxlength="1" size="1">
                     <input type="text" id="KSHauthor" placeholder="Author...">
                     <input type="text" id="KSHdescription" placeholder="Description...">
                     <input type="button" id="KSHsendExpense" value="Test">
@@ -285,7 +263,6 @@
                     <input type="text" id="CEXcatSum" placeholder="error!" maxlength="6" size="4" readonly />
                     <label>CEX </label>
                     <input type="text" id="CEXamount" placeholder="$$$  ->" maxlength="6" size="4">
-                    <input type="text" id="CEXisProfit" maxlength="1" size="1">
                     <input type="text" id="CEXauthor" placeholder="Author...">
                     <input type="text" id="CEXdescription" placeholder="Description...">
                     <input type="button" id="CEXsendExpense" value="Test">
@@ -366,8 +343,7 @@
                     Category: 'ALF',
                     Description: $('#ALFdescription').val(),
                     Author: $('#ALFauthor').val(),
-                    Amount: $('#ALFamount').val(),
-                    isProfit: $('#ALFisProfit').val()
+                    Amount: $('#ALFamount').val()
                 };
                 $.ajax({
                     type: 'POST',
@@ -378,7 +354,7 @@
                 });
                 setTimeout(function () {
                     window.location.reload();
-                }, 1000);
+                }, 10000);
             });
 
             $('#PROsendExpense').bind("click", function () {
@@ -386,8 +362,7 @@
                     Category: 'PRO',
                     Description: $('#PROdescription').val(),
                     Author: $('#PROauthor').val(),
-                    Amount: $('#PROamount').val(),
-                    isProfit: $('#PROisProfit').val()
+                    Amount: $('#PROamount').val()
                 };
                 $.ajax({
                     type: 'POST',
@@ -406,8 +381,7 @@
                     Category: 'PRV',
                     Description: $('#PRVdescription').val(),
                     Author: $('#PRVauthor').val(),
-                    Amount: $('#PRVamount').val(),
-                    isProfit: $('#PRVisProfit').val()
+                    Amount: $('#PRVamount').val()
                 };
                 $.ajax({
                     type: 'POST',
@@ -426,8 +400,7 @@
                     Category: 'BKP',
                     Description: $('#BKPdescription').val(),
                     Author: $('#BKPauthor').val(),
-                    Amount: $('#BKPamount').val(),
-                    isProfit: $('#BKPisProfit').val()
+                    Amount: $('#BKPamount').val()
                 };
                 $.ajax({
                     type: 'POST',
@@ -446,8 +419,7 @@
                     Category: 'WOK',
                     Description: $('#WOKdescription').val(),
                     Author: $('#WOKauthor').val(),
-                    Amount: $('#WOKamount').val(),
-                    isProfit: $('#WOKisProfit').val()
+                    Amount: $('#WOKamount').val()
                 };
                 $.ajax({
                     type: 'POST',
@@ -466,8 +438,7 @@
                     Category: 'MOO',
                     Description: $('#MOOdescription').val(),
                     Author: $('#MOOauthor').val(),
-                    Amount: $('#MOOamount').val(),
-                    isProfit: $('#MOOisProfit').val()
+                    Amount: $('#MOOamount').val()
                 };
                 $.ajax({
                     type: 'POST',
@@ -486,8 +457,7 @@
                     Category: 'HOM',
                     Description: $('#HOMdescription').val(),
                     Author: $('#HOMauthor').val(),
-                    Amount: $('#HOMamount').val(),
-                    isProfit: $('#HOMisProfit').val()
+                    Amount: $('#HOMamount').val()
                 };
                 $.ajax({
                     type: 'POST',
@@ -506,8 +476,7 @@
                     Category: 'KID',
                     Description: $('#KIDdescription').val(),
                     Author: $('#KIDauthor').val(),
-                    Amount: $('#KIDamount').val(),
-                    isProfit: $('#KIDisProfit').val()
+                    Amount: $('#KIDamount').val()
                 };
                 $.ajax({
                     type: 'POST',
@@ -526,8 +495,7 @@
                     Category: 'KIU',
                     Description: $('#KIUdescription').val(),
                     Author: $('#KIUauthor').val(),
-                    Amount: $('#KIUamount').val(),
-                    isProfit: $('#KIUisProfit').val()
+                    Amount: $('#KIUamount').val()
                 };
                 $.ajax({
                     type: 'POST',
@@ -546,8 +514,7 @@
                     Category: 'KIV',
                     Description: $('#KIVdescription').val(),
                     Author: $('#KIVauthor').val(),
-                    Amount: $('#KIVamount').val(),
-                    isProfit: $('#KIVisProfit').val()
+                    Amount: $('#KIVamount').val()
                 };
                 $.ajax({
                     type: 'POST',
@@ -566,8 +533,7 @@
                     Category: 'QVN',
                     Description: $('#QVNdescription').val(),
                     Author: $('#QVNauthor').val(),
-                    Amount: $('#QVNamount').val(),
-                    isProfit: $('#QVNisProfit').val()
+                    Amount: $('#QVNamount').val()
                 };
                 $.ajax({
                     type: 'POST',
@@ -586,8 +552,7 @@
                     Category: 'FOO',
                     Description: $('#FOOdescription').val(),
                     Author: $('#FOOauthor').val(),
-                    Amount: $('#FOOamount').val(),
-                    isProfit: $('#FOOisProfit').val()
+                    Amount: $('#FOOamount').val()
                 };
                 $.ajax({
                     type: 'POST',
@@ -606,8 +571,7 @@
                     Category: 'COF',
                     Description: $('#COFdescription').val(),
                     Author: $('#COFauthor').val(),
-                    Amount: $('#COFamount').val(),
-                    isProfit: $('#COFisProfit').val()
+                    Amount: $('#COFamount').val()
                 };
                 $.ajax({
                     type: 'POST',
@@ -626,8 +590,7 @@
                     Category: 'ENJ',
                     Description: $('#ENJdescription').val(),
                     Author: $('#ENJauthor').val(),
-                    Amount: $('#ENJamount').val(),
-                    isProfit: $('#ENJisProfit').val()
+                    Amount: $('#ENJamount').val()
                 };
                 $.ajax({
                     type: 'POST',
@@ -646,8 +609,7 @@
                     Category: 'PEB',
                     Description: $('#PEBdescription').val(),
                     Author: $('#PEBauthor').val(),
-                    Amount: $('#PEBamount').val(),
-                    isProfit: $('#PEBisProfit').val()
+                    Amount: $('#PEBamount').val()
                 };
                 $.ajax({
                     type: 'POST',
@@ -666,8 +628,7 @@
                     Category: 'HLS',
                     Description: $('#HLSdescription').val(),
                     Author: $('#HLSauthor').val(),
-                    Amount: $('#HLSamount').val(),
-                    isProfit: $('#HLSisProfit').val()
+                    Amount: $('#HLSamount').val()
                 };
                 $.ajax({
                     type: 'POST',
@@ -686,8 +647,7 @@
                     Category: 'CLO',
                     Description: $('#CLOdescription').val(),
                     Author: $('#CLOauthor').val(),
-                    Amount: $('#CLOamount').val(),
-                    isProfit: $('#CLOisProfit').val()
+                    Amount: $('#CLOamount').val()
                 };
                 $.ajax({
                     type: 'POST',
@@ -706,8 +666,7 @@
                     Category: 'VIH',
                     Description: $('#VIHdescription').val(),
                     Author: $('#VIHauthor').val(),
-                    Amount: $('#VIHamount').val(),
-                    isProfit: $('#VIHisProfit').val()
+                    Amount: $('#VIHamount').val()
                 };
                 $.ajax({
                     type: 'POST',
@@ -726,8 +685,7 @@
                     Category: 'VLG',
                     Description: $('#VLGdescription').val(),
                     Author: $('#VLGauthor').val(),
-                    Amount: $('#VLGamount').val(),
-                    isProfit: $('#VLGisProfit').val()
+                    Amount: $('#VLGamount').val()
                 };
                 $.ajax({
                     type: 'POST',
@@ -746,8 +704,7 @@
                     Category: 'FRD',
                     Description: $('#FRDdescription').val(),
                     Author: $('#FRDauthor').val(),
-                    Amount: $('#FRDamount').val(),
-                    isProfit: $('#FRDisProfit').val()
+                    Amount: $('#FRDamount').val()
                 };
                 $.ajax({
                     type: 'POST',
@@ -766,8 +723,7 @@
                     Category: 'KSH',
                     Description: $('#KSHdescription').val(),
                     Author: $('#KSHauthor').val(),
-                    Amount: $('#KSHamount').val(),
-                    isProfit: $('#KSHisProfit').val()
+                    Amount: $('#KSHamount').val()
                 };
                 $.ajax({
                     type: 'POST',
@@ -786,8 +742,7 @@
                     Category: 'CEX',
                     Description: $('#CEXdescription').val(),
                     Author: $('#CEXauthor').val(),
-                    Amount: $('#CEXamount').val(),
-                    isProfit: $('#CEXisProfit').val()
+                    Amount: $('#CEXamount').val()
                 };
                 $.ajax({
                     type: 'POST',
