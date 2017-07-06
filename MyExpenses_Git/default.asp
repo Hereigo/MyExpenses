@@ -26,10 +26,16 @@
             font-size: x-large;
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
         }
+        #XXXcatSum {
+            border: 0;
+            font-size: xx-large;
+            text-align:left;
+        }
     </style>
 </head>
 <body>
     <div>
+        REST:
         <input type="text" id="XXXcatSum" readonly placeholder="error!" />
         <!--<table id="ulValues"></table>-->
         <hr />

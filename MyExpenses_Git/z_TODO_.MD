@@ -1,7 +1,7 @@
 ﻿
 #### I HAVE TO DO FOR IMPROVING THE PROJECT :
 
-#### Make 'Summary' Bigger!
+* Do not allow to save 0-descriptions.
 * Add 'Last Modified' on page.
 * Implement double-action function for Cards Operations.
 * Realise start page usability.
