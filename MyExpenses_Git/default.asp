@@ -374,7 +374,7 @@
                 });
                 setTimeout(function () {
                     window.location.reload();
-                }, 1000);
+                }, 3000);
             });
 
             $('#PROsendExpense').bind("click", function () {
@@ -393,7 +393,7 @@
                 });
                 setTimeout(function () {
                     window.location.reload();
-                }, 1000);
+                }, 3000);
             });
 
             $('#PRVsendExpense').bind("click", function () {
@@ -412,7 +412,7 @@
                 });
                 setTimeout(function () {
                     window.location.reload();
-                }, 1000);
+                }, 3000);
             });
 
             $('#BKPsendExpense').bind("click", function () {
@@ -431,7 +431,7 @@
                 });
                 setTimeout(function () {
                     window.location.reload();
-                }, 1000);
+                }, 3000);
             });
 
             $('#WOKsendExpense').bind("click", function () {
@@ -450,7 +450,7 @@
                 });
                 setTimeout(function () {
                     window.location.reload();
-                }, 1000);
+                }, 3000);
             });
 
             $('#MOOsendExpense').bind("click", function () {
@@ -469,7 +469,7 @@
                 });
                 setTimeout(function () {
                     window.location.reload();
-                }, 1000);
+                }, 3000);
             });
 
             $('#HOMsendExpense').bind("click", function () {
@@ -488,7 +488,7 @@
                 });
                 setTimeout(function () {
                     window.location.reload();
-                }, 1000);
+                }, 3000);
             });
 
             $('#KIDsendExpense').bind("click", function () {
@@ -507,7 +507,7 @@
                 });
                 setTimeout(function () {
                     window.location.reload();
-                }, 1000);
+                }, 3000);
             });
 
             $('#KIUsendExpense').bind("click", function () {
@@ -526,7 +526,7 @@
                 });
                 setTimeout(function () {
                     window.location.reload();
-                }, 1000);
+                }, 3000);
             });
 
             $('#KIVsendExpense').bind("click", function () {
@@ -545,7 +545,7 @@
                 });
                 setTimeout(function () {
                     window.location.reload();
-                }, 1000);
+                }, 3000);
             });
 
             $('#QVNsendExpense').bind("click", function () {
@@ -564,7 +564,7 @@
                 });
                 setTimeout(function () {
                     window.location.reload();
-                }, 1000);
+                }, 3000);
             });
 
             $('#FOOsendExpense').bind("click", function () {
@@ -583,7 +583,7 @@
                 });
                 setTimeout(function () {
                     window.location.reload();
-                }, 1000);
+                }, 3000);
             });
 
             $('#COFsendExpense').bind("click", function () {
@@ -602,7 +602,7 @@
                 });
                 setTimeout(function () {
                     window.location.reload();
-                }, 1000);
+                }, 3000);
             });
 
             $('#ENJsendExpense').bind("click", function () {
@@ -621,7 +621,7 @@
                 });
                 setTimeout(function () {
                     window.location.reload();
-                }, 1000);
+                }, 3000);
             });
 
             $('#PEBsendExpense').bind("click", function () {
@@ -640,7 +640,7 @@
                 });
                 setTimeout(function () {
                     window.location.reload();
-                }, 1000);
+                }, 3000);
             });
 
             $('#HLSsendExpense').bind("click", function () {
@@ -659,7 +659,7 @@
                 });
                 setTimeout(function () {
                     window.location.reload();
-                }, 1000);
+                }, 3000);
             });
 
             $('#CLOsendExpense').bind("click", function () {
@@ -678,7 +678,7 @@
                 });
                 setTimeout(function () {
                     window.location.reload();
-                }, 1000);
+                }, 3000);
             });
 
             $('#VIHsendExpense').bind("click", function () {
@@ -697,7 +697,7 @@
                 });
                 setTimeout(function () {
                     window.location.reload();
-                }, 1000);
+                }, 3000);
             });
 
             $('#VLGsendExpense').bind("click", function () {
@@ -716,7 +716,7 @@
                 });
                 setTimeout(function () {
                     window.location.reload();
-                }, 1000);
+                }, 3000);
             });
 
             $('#FRDsendExpense').bind("click", function () {
@@ -735,7 +735,7 @@
                 });
                 setTimeout(function () {
                     window.location.reload();
-                }, 1000);
+                }, 3000);
             });
 
             $('#KSHsendExpense').bind("click", function () {
@@ -754,7 +754,7 @@
                 });
                 setTimeout(function () {
                     window.location.reload();
-                }, 1000);
+                }, 3000);
             });
 
             $('#CEXsendExpense').bind("click", function () {
@@ -773,7 +773,7 @@
                 });
                 setTimeout(function () {
                     window.location.reload();
-                }, 1000);
+                }, 3000);
             });
 
         });// $(document).ready(function () {
