@@ -5,482 +5,339 @@
     <meta name="keywords" content="asp.net sql asp .net hosting ajax 4.5 3.5 2.0 1.1 MSSQL2014 MSSQL2012 components windows webhosting framework iis7 iis8 iis8.5">
     <meta name="description" content="ASP.NET hosting, SQL hosting, AJAX Hosting, Silverlight hosting, LINQ Hosting, Microsoft Windows 2012 hosting, iis8 hosting, Windows 2012 R2 hosting, iis8.5 hosting.">
     <script src="Scripts/jquery-3.1.1.min.js"></script>
-    <style>
-        body {
-            font-family: "Open Sans", sans-serif;
-            line-height: 1.25;
-        }
-
-        input {
-            width: 90%;
-            font-size: xx-large;
-        }
-
-        label {
-            border: 0;
-            font-size: xx-large;
-        }
-
-        table {
-            border: 1px solid #ccc;
-            border-collapse: collapse;
-            margin: 0;
-            padding: 0;
-            width: 1000px;
-            table-layout: fixed;
-        }
-
-            table caption {
-                font-size: 1.5em;
-                margin: .5em 0 .75em;
-            }
-
-            table tr {
-                background: #f8f8f8;
-                border: 1px solid #ddd;
-                padding: .35em;
-            }
-
-            table th,
-            table td {
-                padding: .625em;
-                text-align: center;
-            }
-
-            table th {
-                font-size: .85em;
-                letter-spacing: .1em;
-                text-transform: uppercase;
-            }
-
-        @media screen and (max-width: 600px) {
-            table {
-                border: 0;
-            }
-
-                table caption {
-                    font-size: 1.3em;
-                }
-
-                table thead {
-                    border: none;
-                    clip: rect(0 0 0 0);
-                    height: 1px;
-                    margin: -1px;
-                    overflow: hidden;
-                    padding: 0;
-                    position: absolute;
-                    width: 1px;
-                }
-
-                table tr {
-                    border-bottom: 3px solid #ddd;
-                    display: block;
-                    margin-bottom: .625em;
-                }
-
-                table td {
-                    border-bottom: 1px solid #ddd;
-                    display: block;
-                    font-size: .8em;
-                    text-align: right;
-                }
-
-                    table td:before {
-                        /*
-    * aria-label has no advantage, it won't be read inside a table
-    content: attr(aria-label);
-    */
-                        content: attr(data-label);
-                        float: left;
-                        font-weight: bold;
-                        text-transform: uppercase;
-                    }
-
-                    table td:last-child {
-                        border-bottom: 0;
-                    }
-        }
-
-        /*OLD STYLES :
-		td {
-            border: solid 1px black;
-            font-family: "Courier New", Courier, monospace;
-        }
-        label {
-            border: 0;
-            font-size: xx-large;
-             width: 40%;
-        }
-        input {
-            text-align: center;
-            font-size: large;
-        }
-        .categorySum {
-            border: 0;
-            font-size: x-large;
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-        }
-        #XXXcatSum {
-            border: 0;
-            font-size: xx-large;
-            text-align:left;
-        }
-        #Modif {
-            border: 0;
-            font-size: xx-large;
-        }*/
-    </style>
+    <link rel="stylesheet" type="text/css" href="default.css" />
 </head>
-
 <body>
     <div>
-        REST:
-        <input maxlength: 10; type="text" id="XXXcatSum" readonly placeholder="error!" />
-        MODIFIED:
-        <input maxlength: 10; type="text" id="Modif" readonly placeholder="error!" />
-
-        <!--<table id="ulValues"></table>-->
+        <input type="text" id="XXXcatSum" style="width: 20%" readonly placeholder="error!" />
+        <input type="text" id="Modif" style="width: 40%" readonly placeholder="error!" />
         <hr />
         <table id="xpensTbl">
-            <caption>Statement Summary</caption>
-            <thead>
-                <tr>
-                    <th scope="col">SUM.</th>
-                    <th scope="col">CAT.</th>
-                    <th scope="col">$$$</th>
-                    <th scope="col">#.AUTHOR.#</th>
-                    <th scope="col">description.</th>
-                    <th scope="col">...</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <input class="categorySum" type="text" id="PROcatSum" placeholder="error!" readonly /></td>
-                    <td>
-                        <label>PRO</label></td>
-                    <td>
-                        <input type="text" id="PROamount" placeholder="$$$  ->"></td>
-                    <td>
-                        <input type="text" id="PROauthor" placeholder="Author..."></td>
-                    <td>
-                        <input type="text" id="PROdescription" placeholder="Description..."></td>
-                    <td>
-                        <input type="button" id="PROsendExpense" value="Test"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <input class="categorySum" type="text" id="MOOcatSum" placeholder="error!" readonly /></td>
-                    <td>
-                        <label>MOO</label></td>
-                    <td>
-                        <input type="text" id="MOOamount" placeholder="$$$  ->"></td>
-                    <td>
-                        <input type="text" id="MOOauthor" placeholder="Author..."></td>
-                    <td>
-                        <input type="text" id="MOOdescription" placeholder="Description..."></td>
-                    <td>
-                        <input type="button" id="MOOsendExpense" value="Test"></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>
-                        <input class="categorySum" type="text" id="ALFcatSum" placeholder="error!" /></td>
-                    <td>
-                        <label>ALF</label></td>
-                    <td>
-                        <input type="text" id="ALFamount" placeholder="$$$  ->"></td>
-                    <td>
-                        <input type="text" id="ALFauthor" placeholder="Author..."></td>
-                    <td>
-                        <input type="text" id="ALFdescription" placeholder="Description..."></td>
-                    <td>
-                        <input type="button" id="ALFsendExpense" value="Test"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <input class="categorySum" type="text" id="PRVcatSum" placeholder="error!" readonly /></td>
-                    <td>
-                        <label>PRV</label></td>
-                    <td>
-                        <input type="text" id="PRVamount" placeholder="$$$  ->"></td>
-                    <td>
-                        <input type="text" id="PRVauthor" placeholder="Author..."></td>
-                    <td>
-                        <input type="text" id="PRVdescription" placeholder="Description..."></td>
-                    <td>
-                        <input type="button" id="PRVsendExpense" value="Test"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <input class="categorySum" type="text" id="BKPcatSum" placeholder="error!" readonly /></td>
-                    <td>
-                        <label>BKP</label></td>
-                    <td>
-                        <input type="text" id="BKPamount" placeholder="$$$  ->"></td>
-                    <td>
-                        <input type="text" id="BKPauthor" placeholder="Author..."></td>
-                    <td>
-                        <input type="text" id="BKPdescription" placeholder="Description..."></td>
-                    <td>
-                        <input type="button" id="BKPsendExpense" value="Test"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <input class="categorySum" type="text" id="CEXcatSum" placeholder="error!" readonly /></td>
-                    <td>
-                        <label>CEX</label></td>
-                    <td>
-                        <input type="text" id="CEXamount" placeholder="$$$  ->"></td>
-                    <td>
-                        <input type="text" id="CEXauthor" placeholder="Author..."></td>
-                    <td>
-                        <input type="text" id="CEXdescription" placeholder="Description..."></td>
-                    <td>
-                        <input type="button" id="CEXsendExpense" value="Test"></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>
-                        <input class="categorySum" type="text" id="WOKcatSum" placeholder="error!" readonly /></td>
-                    <td>
-                        <label>WOK</label></td>
-                    <td>
-                        <input type="text" id="WOKamount" placeholder="$$$  ->"></td>
-                    <td>
-                        <input type="text" id="WOKauthor" placeholder="Author..."></td>
-                    <td>
-                        <input type="text" id="WOKdescription" placeholder="Description..."></td>
-                    <td>
-                        <input type="button" id="WOKsendExpense" value="Test"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <input class="categorySum" type="text" id="HOMcatSum" placeholder="error!" readonly /></td>
-                    <td>
-                        <label>HOM</label></td>
-                    <td>
-                        <input type="text" id="HOMamount" placeholder="$$$  ->"></td>
-                    <td>
-                        <input type="text" id="HOMauthor" placeholder="Author..."></td>
-                    <td>
-                        <input type="text" id="HOMdescription" placeholder="Description..."></td>
-                    <td>
-                        <input type="button" id="HOMsendExpense" value="Test"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <input class="categorySum" type="text" id="KIDcatSum" placeholder="error!" readonly /></td>
-                    <td>
-                        <label>KID</label></td>
-                    <td>
-                        <input type="text" id="KIDamount" placeholder="$$$  ->"></td>
-                    <td>
-                        <input type="text" id="KIDauthor" placeholder="Author..."></td>
-                    <td>
-                        <input type="text" id="KIDdescription" placeholder="Description..."></td>
-                    <td>
-                        <input type="button" id="KIDsendExpense" value="Test"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <input class="categorySum" type="text" id="KIUcatSum" placeholder="error!" readonly /></td>
-                    <td>
-                        <label>KIU</label></td>
-                    <td>
-                        <input type="text" id="KIUamount" placeholder="$$$  ->"></td>
-                    <td>
-                        <input type="text" id="KIUauthor" placeholder="Author..."></td>
-                    <td>
-                        <input type="text" id="KIUdescription" placeholder="Description..."></td>
-                    <td>
-                        <input type="button" id="KIUsendExpense" value="Test"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <input class="categorySum" type="text" id="KIVcatSum" placeholder="error!" readonly /></td>
-                    <td>
-                        <label>KIV</label></td>
-                    <td>
-                        <input type="text" id="KIVamount" placeholder="$$$  ->"></td>
-                    <td>
-                        <input type="text" id="KIVauthor" placeholder="Author..."></td>
-                    <td>
-                        <input type="text" id="KIVdescription" placeholder="Description..."></td>
-                    <td>
-                        <input type="button" id="KIVsendExpense" value="Test"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <input class="categorySum" type="text" id="QVNcatSum" placeholder="error!" readonly /></td>
-                    <td>
-                        <label>QVN</label></td>
-                    <td>
-                        <input type="text" id="QVNamount" placeholder="$$$  ->"></td>
-                    <td>
-                        <input type="text" id="QVNauthor" placeholder="Author..."></td>
-                    <td>
-                        <input type="text" id="QVNdescription" placeholder="Description..."></td>
-                    <td>
-                        <input type="button" id="QVNsendExpense" value="Test"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <input class="categorySum" type="text" id="FOOcatSum" placeholder="error!" readonly /></td>
-                    <td>
-                        <label>FOO</label></td>
-                    <td>
-                        <input type="text" id="FOOamount" placeholder="$$$  ->"></td>
-                    <td>
-                        <input type="text" id="FOOauthor" placeholder="Author..."></td>
-                    <td>
-                        <input type="text" id="FOOdescription" placeholder="Description..."></td>
-                    <td>
-                        <input type="button" id="FOOsendExpense" value="Test"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <input class="categorySum" type="text" id="COFcatSum" placeholder="error!" readonly /></td>
-                    <td>
-                        <label>COF</label></td>
-                    <td>
-                        <input type="text" id="COFamount" placeholder="$$$  ->"></td>
-                    <td>
-                        <input type="text" id="COFauthor" placeholder="Author..."></td>
-                    <td>
-                        <input type="text" id="COFdescription" placeholder="Description..."></td>
-                    <td>
-                        <input type="button" id="COFsendExpense" value="Test"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <input class="categorySum" type="text" id="ENJcatSum" placeholder="error!" readonly /></td>
-                    <td>
-                        <label>ENJ</label></td>
-                    <td>
-                        <input type="text" id="ENJamount" placeholder="$$$  ->"></td>
-                    <td>
-                        <input type="text" id="ENJauthor" placeholder="Author..."></td>
-                    <td>
-                        <input type="text" id="ENJdescription" placeholder="Description..."></td>
-                    <td>
-                        <input type="button" id="ENJsendExpense" value="Test"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <input class="categorySum" type="text" id="PEBcatSum" placeholder="error!" readonly /></td>
-                    <td>
-                        <label>PEB</label></td>
-                    <td>
-                        <input type="text" id="PEBamount" placeholder="$$$  ->"></td>
-                    <td>
-                        <input type="text" id="PEBauthor" placeholder="Author..."></td>
-                    <td>
-                        <input type="text" id="PEBdescription" placeholder="Description..."></td>
-                    <td>
-                        <input type="button" id="PEBsendExpense" value="Test"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <input class="categorySum" type="text" id="HLScatSum" placeholder="error!" readonly /></td>
-                    <td>
-                        <label>HLS</label></td>
-                    <td>
-                        <input type="text" id="HLSamount" placeholder="$$$  ->"></td>
-                    <td>
-                        <input type="text" id="HLSauthor" placeholder="Author..."></td>
-                    <td>
-                        <input type="text" id="HLSdescription" placeholder="Description..."></td>
-                    <td>
-                        <input type="button" id="HLSsendExpense" value="Test"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <input class="categorySum" type="text" id="CLOcatSum" placeholder="error!" readonly /></td>
-                    <td>
-                        <label>CLO</label></td>
-                    <td>
-                        <input type="text" id="CLOamount" placeholder="$$$  ->"></td>
-                    <td>
-                        <input type="text" id="CLOauthor" placeholder="Author..."></td>
-                    <td>
-                        <input type="text" id="CLOdescription" placeholder="Description..."></td>
-                    <td>
-                        <input type="button" id="CLOsendExpense" value="Test"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <input class="categorySum" type="text" id="VIHcatSum" placeholder="error!" readonly /></td>
-                    <td>
-                        <label>VIH</label></td>
-                    <td>
-                        <input type="text" id="VIHamount" placeholder="$$$  ->"></td>
-                    <td>
-                        <input type="text" id="VIHauthor" placeholder="Author..."></td>
-                    <td>
-                        <input type="text" id="VIHdescription" placeholder="Description..."></td>
-                    <td>
-                        <input type="button" id="VIHsendExpense" value="Test"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <input class="categorySum" type="text" id="VLGcatSum" placeholder="error!" readonly /></td>
-                    <td>
-                        <label>VLG</label></td>
-                    <td>
-                        <input type="text" id="VLGamount" placeholder="$$$  ->"></td>
-                    <td>
-                        <input type="text" id="VLGauthor" placeholder="Author..."></td>
-                    <td>
-                        <input type="text" id="VLGdescription" placeholder="Description..."></td>
-                    <td>
-                        <input type="button" id="VLGsendExpense" value="Test"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <input class="categorySum" type="text" id="FRDcatSum" placeholder="error!" readonly /></td>
-                    <td>
-                        <label>FRD</label></td>
+            <tr>
+                <td>
+                    <input class="categorySum" type="text" id="PROcatSum" placeholder="error!" readonly /></td>
+                <td>
+                    <label>PRO</label></td>
+                <td>
+                    <input type="text" id="PROamount" placeholder="$$$  ->"></td>
+                <td>
+                    <input type="text" id="PROauthor" placeholder="Author..."></td>
+                <td>
+                    <input type="text" id="PROdescription" placeholder="Description..."></td>
+                <td>
+                    <input type="button" id="PROsendExpense" value="Test"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="categorySum" type="text" id="MOOcatSum" placeholder="error!" readonly /></td>
+                <td>
+                    <label>MOO</label></td>
+                <td>
+                    <input type="text" id="MOOamount" placeholder="$$$  ->"></td>
+                <td>
+                    <input type="text" id="MOOauthor" placeholder="Author..."></td>
+                <td>
+                    <input type="text" id="MOOdescription" placeholder="Description..."></td>
+                <td>
+                    <input type="button" id="MOOsendExpense" value="Test"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="categorySum" type="text" id="ALFcatSum" placeholder="error!" /></td>
+                <td>
+                    <label>ALF</label></td>
+                <td>
+                    <input type="text" id="ALFamount" placeholder="$$$  ->"></td>
+                <td>
+                    <input type="text" id="ALFauthor" placeholder="Author..."></td>
+                <td>
+                    <input type="text" id="ALFdescription" placeholder="Description..."></td>
+                <td>
+                    <input type="button" id="ALFsendExpense" value="Test"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="categorySum" type="text" id="PRVcatSum" placeholder="error!" readonly /></td>
+                <td>
+                    <label>PRV</label></td>
+                <td>
+                    <input type="text" id="PRVamount" placeholder="$$$  ->"></td>
+                <td>
+                    <input type="text" id="PRVauthor" placeholder="Author..."></td>
+                <td>
+                    <input type="text" id="PRVdescription" placeholder="Description..."></td>
+                <td>
+                    <input type="button" id="PRVsendExpense" value="Test"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="categorySum" type="text" id="BKPcatSum" placeholder="error!" readonly /></td>
+                <td>
+                    <label>BKP</label></td>
+                <td>
+                    <input type="text" id="BKPamount" placeholder="$$$  ->"></td>
+                <td>
+                    <input type="text" id="BKPauthor" placeholder="Author..."></td>
+                <td>
+                    <input type="text" id="BKPdescription" placeholder="Description..."></td>
+                <td>
+                    <input type="button" id="BKPsendExpense" value="Test"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="categorySum" type="text" id="CEXcatSum" placeholder="error!" readonly /></td>
+                <td>
+                    <label>CEX</label></td>
+                <td>
+                    <input type="text" id="CEXamount" placeholder="$$$  ->"></td>
+                <td>
+                    <input type="text" id="CEXauthor" placeholder="Author..."></td>
+                <td>
+                    <input type="text" id="CEXdescription" placeholder="Description..."></td>
+                <td>
+                    <input type="button" id="CEXsendExpense" value="Test"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="categorySum" type="text" id="WOKcatSum" placeholder="error!" readonly /></td>
+                <td>
+                    <label>WOK</label></td>
+                <td>
+                    <input type="text" id="WOKamount" placeholder="$$$  ->"></td>
+                <td>
+                    <input type="text" id="WOKauthor" placeholder="Author..."></td>
+                <td>
+                    <input type="text" id="WOKdescription" placeholder="Description..."></td>
+                <td>
+                    <input type="button" id="WOKsendExpense" value="Test"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="categorySum" type="text" id="HOMcatSum" placeholder="error!" readonly /></td>
+                <td>
+                    <label>HOM</label></td>
+                <td>
+                    <input type="text" id="HOMamount" placeholder="$$$  ->"></td>
+                <td>
+                    <input type="text" id="HOMauthor" placeholder="Author..."></td>
+                <td>
+                    <input type="text" id="HOMdescription" placeholder="Description..."></td>
+                <td>
+                    <input type="button" id="HOMsendExpense" value="Test"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="categorySum" type="text" id="KIDcatSum" placeholder="error!" readonly /></td>
+                <td>
+                    <label>KID</label></td>
+                <td>
+                    <input type="text" id="KIDamount" placeholder="$$$  ->"></td>
+                <td>
+                    <input type="text" id="KIDauthor" placeholder="Author..."></td>
+                <td>
+                    <input type="text" id="KIDdescription" placeholder="Description..."></td>
+                <td>
+                    <input type="button" id="KIDsendExpense" value="Test"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="categorySum" type="text" id="KIUcatSum" placeholder="error!" readonly /></td>
+                <td>
+                    <label>KIU</label></td>
+                <td>
+                    <input type="text" id="KIUamount" placeholder="$$$  ->"></td>
+                <td>
+                    <input type="text" id="KIUauthor" placeholder="Author..."></td>
+                <td>
+                    <input type="text" id="KIUdescription" placeholder="Description..."></td>
+                <td>
+                    <input type="button" id="KIUsendExpense" value="Test"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="categorySum" type="text" id="KIVcatSum" placeholder="error!" readonly /></td>
+                <td>
+                    <label>KIV</label></td>
+                <td>
+                    <input type="text" id="KIVamount" placeholder="$$$  ->"></td>
+                <td>
+                    <input type="text" id="KIVauthor" placeholder="Author..."></td>
+                <td>
+                    <input type="text" id="KIVdescription" placeholder="Description..."></td>
+                <td>
+                    <input type="button" id="KIVsendExpense" value="Test"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="categorySum" type="text" id="QVNcatSum" placeholder="error!" readonly /></td>
+                <td>
+                    <label>QVN</label></td>
+                <td>
+                    <input type="text" id="QVNamount" placeholder="$$$  ->"></td>
+                <td>
+                    <input type="text" id="QVNauthor" placeholder="Author..."></td>
+                <td>
+                    <input type="text" id="QVNdescription" placeholder="Description..."></td>
+                <td>
+                    <input type="button" id="QVNsendExpense" value="Test"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="categorySum" type="text" id="FOOcatSum" placeholder="error!" readonly /></td>
+                <td>
+                    <label>FOO</label></td>
+                <td>
+                    <input type="text" id="FOOamount" placeholder="$$$  ->"></td>
+                <td>
+                    <input type="text" id="FOOauthor" placeholder="Author..."></td>
+                <td>
+                    <input type="text" id="FOOdescription" placeholder="Description..."></td>
+                <td>
+                    <input type="button" id="FOOsendExpense" value="Test"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="categorySum" type="text" id="COFcatSum" placeholder="error!" readonly /></td>
+                <td>
+                    <label>COF</label></td>
+                <td>
+                    <input type="text" id="COFamount" placeholder="$$$  ->"></td>
+                <td>
+                    <input type="text" id="COFauthor" placeholder="Author..."></td>
+                <td>
+                    <input type="text" id="COFdescription" placeholder="Description..."></td>
+                <td>
+                    <input type="button" id="COFsendExpense" value="Test"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="categorySum" type="text" id="ENJcatSum" placeholder="error!" readonly /></td>
+                <td>
+                    <label>ENJ</label></td>
+                <td>
+                    <input type="text" id="ENJamount" placeholder="$$$  ->"></td>
+                <td>
+                    <input type="text" id="ENJauthor" placeholder="Author..."></td>
+                <td>
+                    <input type="text" id="ENJdescription" placeholder="Description..."></td>
+                <td>
+                    <input type="button" id="ENJsendExpense" value="Test"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="categorySum" type="text" id="PEBcatSum" placeholder="error!" readonly /></td>
+                <td>
+                    <label>PEB</label></td>
+                <td>
+                    <input type="text" id="PEBamount" placeholder="$$$  ->"></td>
+                <td>
+                    <input type="text" id="PEBauthor" placeholder="Author..."></td>
+                <td>
+                    <input type="text" id="PEBdescription" placeholder="Description..."></td>
+                <td>
+                    <input type="button" id="PEBsendExpense" value="Test"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="categorySum" type="text" id="HLScatSum" placeholder="error!" readonly /></td>
+                <td>
+                    <label>HLS</label></td>
+                <td>
+                    <input type="text" id="HLSamount" placeholder="$$$  ->"></td>
+                <td>
+                    <input type="text" id="HLSauthor" placeholder="Author..."></td>
+                <td>
+                    <input type="text" id="HLSdescription" placeholder="Description..."></td>
+                <td>
+                    <input type="button" id="HLSsendExpense" value="Test"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="categorySum" type="text" id="CLOcatSum" placeholder="error!" readonly /></td>
+                <td>
+                    <label>CLO</label></td>
+                <td>
+                    <input type="text" id="CLOamount" placeholder="$$$  ->"></td>
+                <td>
+                    <input type="text" id="CLOauthor" placeholder="Author..."></td>
+                <td>
+                    <input type="text" id="CLOdescription" placeholder="Description..."></td>
+                <td>
+                    <input type="button" id="CLOsendExpense" value="Test"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="categorySum" type="text" id="VIHcatSum" placeholder="error!" readonly /></td>
+                <td>
+                    <label>VIH</label></td>
+                <td>
+                    <input type="text" id="VIHamount" placeholder="$$$  ->"></td>
+                <td>
+                    <input type="text" id="VIHauthor" placeholder="Author..."></td>
+                <td>
+                    <input type="text" id="VIHdescription" placeholder="Description..."></td>
+                <td>
+                    <input type="button" id="VIHsendExpense" value="Test"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="categorySum" type="text" id="VLGcatSum" placeholder="error!" readonly /></td>
+                <td>
+                    <label>VLG</label></td>
+                <td>
+                    <input type="text" id="VLGamount" placeholder="$$$  ->"></td>
+                <td>
+                    <input type="text" id="VLGauthor" placeholder="Author..."></td>
+                <td>
+                    <input type="text" id="VLGdescription" placeholder="Description..."></td>
+                <td>
+                    <input type="button" id="VLGsendExpense" value="Test"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="categorySum" type="text" id="FRDcatSum" placeholder="error!" readonly /></td>
+                <td>
+                    <label>FRD</label></td>
 
-                    <td>
-                        <input type="text" id="FRDamount" placeholder="$$$  ->"></td>
-                    <td>
-                        <input type="text" id="FRDauthor" placeholder="Author..."></td>
-                    <td>
-                        <input type="text" id="FRDdescription" placeholder="Description..."></td>
-                    <td>
-                        <input type="button" id="FRDsendExpense" value="Test"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <input class="categorySum" type="text" id="KSHcatSum" placeholder="error!" readonly /></td>
-                    <td>
-                        <label>KSH</label></td>
-                    <td>
-                        <input type="text" id="KSHamount" placeholder="$$$  ->"></td>
-                    <td>
-                        <input type="text" id="KSHauthor" placeholder="Author..."></td>
-                    <td>
-                        <input type="text" id="KSHdescription" placeholder="Description..."></td>
-                    <td>
-                        <input type="button" id="KSHsendExpense" value="Test"></td>
-                </tr>
-            </tbody>
+                <td>
+                    <input type="text" id="FRDamount" placeholder="$$$  ->"></td>
+                <td>
+                    <input type="text" id="FRDauthor" placeholder="Author..."></td>
+                <td>
+                    <input type="text" id="FRDdescription" placeholder="Description..."></td>
+                <td>
+                    <input type="button" id="FRDsendExpense" value="Test"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="categorySum" type="text" id="KSHcatSum" placeholder="error!" readonly /></td>
+                <td>
+                    <label>KSH</label></td>
+                <td>
+                    <input type="text" id="KSHamount" placeholder="$$$  ->"></td>
+                <td>
+                    <input type="text" id="KSHauthor" placeholder="Author..."></td>
+                <td>
+                    <input type="text" id="KSHdescription" placeholder="Description..."></td>
+                <td>
+                    <input type="button" id="KSHsendExpense" value="Test"></td>
+            </tr>
         </table>
     </div>
     <!-- ----------------- S C R I P T S : ------------------- -->
