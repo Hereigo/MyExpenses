@@ -9,6 +9,8 @@
 </head>
 <body>
     <div>
+        <ul id="last2days"></ul>
+        <hr />
         <input type="text" id="XXXcatSum" style="width: 20%" readonly placeholder="error!" />
         <input type="text" id="Modif" style="width: 40%" readonly placeholder="error!" />
         <hr />

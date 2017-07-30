@@ -17,9 +17,11 @@ namespace MyExpenses_Git.Controllers
             return SqliteUse.GetCategoriesCollection();
         }
 
-        // GET: api/Expenses/5
+        // GET: api/Expenses/5 = Review of last 5 days
         public string Get(int id)
         {
+            int howMuchDays = id;
+
             return "value";
         }
 
