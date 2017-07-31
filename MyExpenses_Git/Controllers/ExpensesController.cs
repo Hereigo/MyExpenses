@@ -5,13 +5,15 @@ using Web_API.Models;
 
 namespace MyExpenses_Git.Controllers
 {
+    [Authorize]
     public class ExpensesController : ApiController
     {
         // GET: api/Expenses
-        //public IEnumerable<Expense> Get()
-        //{
-        //    return SqliteUse.RetrieveAllXpensesFromDb().ToArray();
-        //}
+        // public IEnumerable<Expense> LastTwoDays()
+        // {
+        //     // return SqliteUse.RetrieveAllXpensesFromDb().ToArray(); - NOT ALL !!!
+        // }
+
         public CategoriesCollect Get()
         {
             return SqliteUse.GetCategoriesCollection();

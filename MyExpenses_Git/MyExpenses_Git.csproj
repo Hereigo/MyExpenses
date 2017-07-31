@@ -113,6 +113,7 @@
     <Content Include="App_Data\__TODO__.MD" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BasicAuthHttpModule.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ExpensesController.cs" />
     <Compile Include="Global.asax.cs">
