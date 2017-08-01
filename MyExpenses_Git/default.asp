@@ -9,7 +9,7 @@
 </head>
 <body>
     <div>
-        <ul id="last2days"></ul>
+        <!--<ul id="last2days"></ul>-->
         <hr />
         <input type="text" id="XXXcatSum" style="width: 20%" readonly placeholder="error!" />
         <input type="text" id="Modif" style="width: 40%" readonly placeholder="error!" />
@@ -346,22 +346,28 @@
     <script type="text/javascript">
         $(document).ready(function () {
             window.onload = (function GetAllExpenses() {
-                var myValues = $('#last2days');
-                myValues.empty();
-                $.ajax({
-                    type: "GET",
-                    url: "/api/LastTwoDays",
-                    dataType: "json",
-                    success: function (data) {
-                        $.each(data, function (index, Expense) {
-                            var fullStr = "";
-                            myValues.append('<tr><td>' + Expense.id + '</td><td>' + Expense.Created + '</td><td>' +
-                                Expense.Amount + '</td><td>' + Expense.isProfit + '</td><td>' +
-                                Expense.Category + '</td><td>' + Expense.Description + '</td><td>' +
-                                Expense.Author + '</td></tr>');
-                        });
-                    }
-                });
+
+                // $.when()
+
+                // https://www.google.com.ua/search?q=jquery+when+then&ie=utf-8&oe=utf-8&client=firefox-b-ab&gfe_rd=cr&ei=gjaAWfC5GMPi8AeF06noAg
+
+                //var myValues = $('#last2days');
+                //myValues.empty();
+                //$.ajax({
+                //    type: "GET",
+                //    url: "/api/LastTwoDays",
+                //    dataType: "json",
+                //    success: function (data) {
+                //        $.each(data, function (index, Expense) {
+                //            var fullStr = "";
+                //            myValues.append('<tr><td>' + Expense.id + '</td><td>' + Expense.Created + '</td><td>' +
+                //                Expense.Amount + '</td><td>' + Expense.isProfit + '</td><td>' +
+                //                Expense.Category + '</td><td>' + Expense.Description + '</td><td>' +
+                //                Expense.Author + '</td></tr>');
+                //        });
+                //    }
+                //});
+
                 // = clearTableFields() =
                 (function () {
                     var container, inputs, index;

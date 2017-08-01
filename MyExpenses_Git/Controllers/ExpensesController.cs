@@ -1,5 +1,6 @@
 ﻿using MyExpenses_Git.Models;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.Web.Http;
 using Web_API.Models;
 
@@ -8,11 +9,11 @@ namespace MyExpenses_Git.Controllers
     [Authorize]
     public class ExpensesController : ApiController
     {
-        // GET: api/Expenses
-        // public IEnumerable<Expense> LastTwoDays()
-        // {
-        //     // return SqliteUse.RetrieveAllXpensesFromDb().ToArray(); - NOT ALL !!!
-        // }
+        // GET: api/LastTwoDays
+        //public IEnumerable<Expense> LastTwoDays()
+        //{
+        //    return SqliteUse.RetrieveAllXpensesFromDb().ToArray(); // - NOT ALL !!!
+        //}
 
         public CategoriesCollect Get()
         {
@@ -29,7 +30,7 @@ namespace MyExpenses_Git.Controllers
 
         // POST: api/Expenses
         public void Post([FromBody]object expenseData)
-        // public IHttpActionResult Post([FromBody]object expenseData)  //!!!!!!
+        // public IHttpActionResult Post([FromBody]object expenseData)  // TODO: Implement.!!!!!!
         {
             Expense result = JsonConvert.DeserializeObject<Expense>(expenseData.ToString());
 
