@@ -12,9 +12,44 @@ namespace Console_Tests
             conv.Converter();
             Console.WriteLine();
 
+            // CreateSqliteDb();
 
-            CreateSqliteDb();
+            UpdateSqlite();
 
+        }
+
+        private static void UpdateSqlite()
+        {
+            SQLiteConnection conn = new SQLiteConnection("Data Source=aaaSqlite.db; Version=3;");
+            try
+            {
+                conn.Open();
+                if (conn.State == ConnectionState.Open)
+                {
+                    SQLiteCommand cmd = conn.CreateCommand();
+                    string tableName = "myExpenses";
+
+                    string time = new DateTime(2017, 08, 31).ToString("yyyy-MM-dd HH:mm:ss.sss");
+
+                    string sql_command =
+                        "UPDATE " + tableName + " SET time='" + time + "' WHERE Id=515 ;";
+
+                    cmd.CommandText = sql_command;
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (SQLiteException ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+                conn.Dispose();
+            }
+            catch (SQLiteException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         private static void CreateSqliteDb()

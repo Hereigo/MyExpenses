@@ -10,9 +10,11 @@ namespace MyExpenses_Git.Controllers
     public class ExpensesController : ApiController
     {
         // GET: api/LastTwoDays
-        //public IEnumerable<Expense> LastTwoDays()
+        //public string LastTwoDays() // IEnumerable<Expense> LastTwoDays()
         //{
-        //    return SqliteUse.RetrieveAllXpensesFromDb().ToArray(); // - NOT ALL !!!
+        //    // TODO:
+        //    // Implement right!
+        //    return "LastTwoDaysResult!"; // SqliteUse.RetrieveAllXpensesFromDb().ToArray(); // - NOT ALL !!!
         //}
 
         public CategoriesCollect Get()
@@ -33,6 +35,14 @@ namespace MyExpenses_Git.Controllers
         // public IHttpActionResult Post([FromBody]object expenseData)  // TODO: Implement.!!!!!!
         {
             Expense result = JsonConvert.DeserializeObject<Expense>(expenseData.ToString());
+
+            // TEMPORARY !!!!!!!!
+            // TEMPORARY !!!!!!!!
+            // TEMPORARY !!!!!!!!
+            result.Author = "andruxa";
+            // TEMPORARY !!!!!!!!
+            // TEMPORARY !!!!!!!!
+            // TEMPORARY !!!!!!!!
 
             if (result.Author.Trim().ToLower() == "andruxa" && result.Description.Trim().Length > 2)
             {
