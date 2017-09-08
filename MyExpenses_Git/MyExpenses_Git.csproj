@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="default.asp" />
+    <Content Include="default.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="App_Data\aaaSqlite.db" />

@@ -47,32 +47,32 @@ namespace MyExpenses_Git
         {
             List<Expense> allExpenses = RetrieveAllXpensesFromDb();
 
-            string modif = allExpenses.Select(x => x.Created).Max().ToString("dd__HH:mm:ss");
+            string modif = allExpenses.Select(x => x.Created).Max().ToString("dd.MMM - HH:mm:ss");
 
-            int sumPro = allExpenses.Where(x => x.Category.ToUpper() == "PRO").Select(x => x.Amount).Sum();
-            int sumMoo = allExpenses.Where(x => x.Category.ToUpper() == "MOO").Select(x => x.Amount).Sum();
-
-            int sumAlf = allExpenses.Where(x => x.Category.ToUpper() == "ALF").Select(x => x.Amount).Sum();
-            int sumPrv = allExpenses.Where(x => x.Category.ToUpper() == "PRV").Select(x => x.Amount).Sum();
-            int sumBkp = allExpenses.Where(x => x.Category.ToUpper() == "BKP").Select(x => x.Amount).Sum();
-            int sumCex = allExpenses.Where(x => x.Category.ToUpper() == "CEX").Select(x => x.Amount).Sum();
-
-            int sumClo = allExpenses.Where(x => x.Category.ToUpper() == "CLO").Select(x => x.Amount).Sum();
-            int sumCof = allExpenses.Where(x => x.Category.ToUpper() == "COF").Select(x => x.Amount).Sum();
-            int sumEnj = allExpenses.Where(x => x.Category.ToUpper() == "ENJ").Select(x => x.Amount).Sum();
-            int sumFoo = allExpenses.Where(x => x.Category.ToUpper() == "FOO").Select(x => x.Amount).Sum();
-            int sumFrd = allExpenses.Where(x => x.Category.ToUpper() == "FRD").Select(x => x.Amount).Sum();
-            int sumHls = allExpenses.Where(x => x.Category.ToUpper() == "HLS").Select(x => x.Amount).Sum();
-            int sumHom = allExpenses.Where(x => x.Category.ToUpper() == "HOM").Select(x => x.Amount).Sum();
-            int sumKid = allExpenses.Where(x => x.Category.ToUpper() == "KID").Select(x => x.Amount).Sum();
-            int sumKiu = allExpenses.Where(x => x.Category.ToUpper() == "KIU").Select(x => x.Amount).Sum();
-            int sumKiv = allExpenses.Where(x => x.Category.ToUpper() == "KIV").Select(x => x.Amount).Sum();
-            int sumKsh = allExpenses.Where(x => x.Category.ToUpper() == "KSH").Select(x => x.Amount).Sum();
-            int sumPeb = allExpenses.Where(x => x.Category.ToUpper() == "PEB").Select(x => x.Amount).Sum();
-            int sumQvn = allExpenses.Where(x => x.Category.ToUpper() == "QVN").Select(x => x.Amount).Sum();
-            int sumVih = allExpenses.Where(x => x.Category.ToUpper() == "VIH").Select(x => x.Amount).Sum();
-            int sumVlg = allExpenses.Where(x => x.Category.ToUpper() == "VLG").Select(x => x.Amount).Sum();
-            int sumWok = allExpenses.Where(x => x.Category.ToUpper() == "WOK").Select(x => x.Amount).Sum();
+            int sumPro = allExpenses.Where(x => x.Category.ToUpper() == "PRO" && x.Created.Month == DateTime.Now.Month ).Select(x => x.Amount).Sum();
+            int sumMoo = allExpenses.Where(x => x.Category.ToUpper() == "MOO" && x.Created.Month == DateTime.Now.Month ).Select(x => x.Amount).Sum();
+            //                                                                && x.Created.Month == DateTime.Now.Month 
+            int sumAlf = allExpenses.Where(x => x.Category.ToUpper() == "ALF" && x.Created.Month == DateTime.Now.Month ).Select(x => x.Amount).Sum();
+            int sumPrv = allExpenses.Where(x => x.Category.ToUpper() == "PRV" && x.Created.Month == DateTime.Now.Month ).Select(x => x.Amount).Sum();
+            int sumBkp = allExpenses.Where(x => x.Category.ToUpper() == "BKP" && x.Created.Month == DateTime.Now.Month ).Select(x => x.Amount).Sum();
+            int sumCex = allExpenses.Where(x => x.Category.ToUpper() == "CEX" && x.Created.Month == DateTime.Now.Month ).Select(x => x.Amount).Sum();
+            //                                                                && x.Created.Month == DateTime.Now.Month 
+            int sumClo = allExpenses.Where(x => x.Category.ToUpper() == "CLO" && x.Created.Month == DateTime.Now.Month ).Select(x => x.Amount).Sum();
+            int sumCof = allExpenses.Where(x => x.Category.ToUpper() == "COF" && x.Created.Month == DateTime.Now.Month ).Select(x => x.Amount).Sum();
+            int sumEnj = allExpenses.Where(x => x.Category.ToUpper() == "ENJ" && x.Created.Month == DateTime.Now.Month ).Select(x => x.Amount).Sum();
+            int sumFoo = allExpenses.Where(x => x.Category.ToUpper() == "FOO" && x.Created.Month == DateTime.Now.Month ).Select(x => x.Amount).Sum();
+            int sumFrd = allExpenses.Where(x => x.Category.ToUpper() == "FRD" && x.Created.Month == DateTime.Now.Month ).Select(x => x.Amount).Sum();
+            int sumHls = allExpenses.Where(x => x.Category.ToUpper() == "HLS" && x.Created.Month == DateTime.Now.Month ).Select(x => x.Amount).Sum();
+            int sumHom = allExpenses.Where(x => x.Category.ToUpper() == "HOM" && x.Created.Month == DateTime.Now.Month ).Select(x => x.Amount).Sum();
+            int sumKid = allExpenses.Where(x => x.Category.ToUpper() == "KID" && x.Created.Month == DateTime.Now.Month ).Select(x => x.Amount).Sum();
+            int sumKiu = allExpenses.Where(x => x.Category.ToUpper() == "KIU" && x.Created.Month == DateTime.Now.Month ).Select(x => x.Amount).Sum();
+            int sumKiv = allExpenses.Where(x => x.Category.ToUpper() == "KIV" && x.Created.Month == DateTime.Now.Month ).Select(x => x.Amount).Sum();
+            int sumKsh = allExpenses.Where(x => x.Category.ToUpper() == "KSH" && x.Created.Month == DateTime.Now.Month ).Select(x => x.Amount).Sum();
+            int sumPeb = allExpenses.Where(x => x.Category.ToUpper() == "PEB" && x.Created.Month == DateTime.Now.Month ).Select(x => x.Amount).Sum();
+            int sumQvn = allExpenses.Where(x => x.Category.ToUpper() == "QVN" && x.Created.Month == DateTime.Now.Month ).Select(x => x.Amount).Sum();
+            int sumVih = allExpenses.Where(x => x.Category.ToUpper() == "VIH" && x.Created.Month == DateTime.Now.Month ).Select(x => x.Amount).Sum();
+            int sumVlg = allExpenses.Where(x => x.Category.ToUpper() == "VLG" && x.Created.Month == DateTime.Now.Month ).Select(x => x.Amount).Sum();
+            int sumWok = allExpenses.Where(x => x.Category.ToUpper() == "WOK" && x.Created.Month == DateTime.Now.Month ).Select(x => x.Amount).Sum();
 
             int sumXXX = (sumPro + sumMoo) - (sumAlf + sumPrv + sumBkp + sumCex + sumClo + sumCof + sumEnj + sumFoo + sumFrd
                 + sumHls + sumHom + sumKid + sumKiu + sumKiv + sumKsh + sumPeb + sumQvn + sumVih + sumVlg + sumWok);

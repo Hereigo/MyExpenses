@@ -9,12 +9,15 @@
 </head>
 <body>
     <div>
-        <ul id="last2days"></ul>
-        <hr />
-        <input type="text" id="XXXcatSum" style="width: 20%" readonly placeholder="error!" />
-        <input type="text" id="Modif" style="width: 40%" readonly placeholder="error!" />
-        <hr />
         <table id="xpensTbl">
+            <tr>
+                <td colspan="3" style="border:6px solid black">
+                    <input type="text" id="XXXcatSum" style="text-align:center;font-weight:700" readonly placeholder="error!" />
+                </td>
+                <td colspan="3">
+                    <input type="text" id="Modif" readonly style="text-align:center" placeholder="error!" />
+                </td>
+            </tr>
             <tr>
                 <td>
                     <input class="categorySum" type="text" id="PROcatSum" placeholder="error!" readonly /></td>
