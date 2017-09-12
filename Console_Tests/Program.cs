@@ -14,8 +14,20 @@ namespace Console_Tests
 
             // CreateSqliteDb();
 
-            UpdateSqlite();
+            // UpdateSqlite();
 
+            int a = Int32.MaxValue;
+            Object o = (a + a);
+            Type[] types = new Type[] { o.GetType() };
+
+            foreach (var item in types)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine(o); // = -2 !!!!!!!!!!!
+            Console.WriteLine(o); // = -2 !!!!!!!!!!!
+            Console.WriteLine(o); // = -2 !!!!!!!!!!!
         }
 
         private static void UpdateSqlite()
