@@ -2,20 +2,18 @@
 <head>
     <title>My Expenses</title>
     <meta charset="utf-8">
-    <meta name="keywords" content="asp.net sql asp .net hosting ajax 4.5 3.5 2.0 1.1 MSSQL2014 MSSQL2012 components windows webhosting framework iis7 iis8 iis8.5">
-    <meta name="description" content="ASP.NET hosting, SQL hosting, AJAX Hosting, Silverlight hosting, LINQ Hosting, Microsoft Windows 2012 hosting, iis8 hosting, Windows 2012 R2 hosting, iis8.5 hosting.">
-    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="default.css" />
 </head>
 <body>
     <div>
         <table id="xpensTbl">
             <tr>
-                <td colspan="3" style="border:6px solid black">
-                    <input type="text" id="XXXcatSum" style="text-align:center;font-weight:700" readonly placeholder="error!" />
+                <td colspan="3" style="border: 6px solid black">
+                    <input type="text" id="XXXcatSum" style="text-align: center; font-weight: 700" readonly placeholder="error!" />
                 </td>
                 <td colspan="3">
-                    <input type="text" id="Modif" readonly style="text-align:center" placeholder="error!" />
+                    <input type="text" id="Modif" readonly style="text-align: center" placeholder="error!" />
                 </td>
             </tr>
             <tr>
